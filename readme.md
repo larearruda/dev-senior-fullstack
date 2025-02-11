@@ -11,7 +11,9 @@ Proposta para desenvolver capacidades técnicas de Desenvolvedor FullStack Senio
 4. ~~Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação;~~
 
 ## Objetivos
-1. Containerizar projeto e criar um passo a passo de como rodar a aplicação
+1. Implementar testes unitários
+2. Implementar testes de integração
+3. Containerizar projeto e criar um passo a passo de como rodar a aplicação
 
 ## Proposta
 Você deverá desenvolver uma central de ajuda. Esta plataforma deverá possuir uma API construída com Node.js utilizando o framework de sua preferência que servirá para fornecer a comunicação necessária a uma aplicação web ReactJS por onde os atendentes estarão dando suporte a usuários que abrirão chamados por um aplicativo móvel construído com React Native.
@@ -31,5 +33,5 @@ Esta plataforma deve atender as seguintes histórias:
 > - Você pode utilizar os bancos de dados relacional (ou não relacional) de sua preferência.
 > - Você pode utilizar a estratégia que lhe for pertinente para garantir a comunicação em tempo real das aplicações web e mobile;
 
-## Diferenciais
-Serão considerados diferenciais o desenvolvimento de testes unitários e de integração em qualquer uma das aplicações desenvolvidas.
+## ~~Diferenciais~~
+~~Serão considerados diferenciais o desenvolvimento de testes unitários e de integração em qualquer uma das aplicações desenvolvidas.~~

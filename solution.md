@@ -19,3 +19,19 @@ npx create-expo-app mobile-chat
 cd mobile-chat 
 npx expo start
 ```
+## Ideias conceituais do projeto
+- Atendimento para Turismo e Hotéis (Exemplo: Booking, Airbnb, CVC, Decolar)
+   - Viajantes podem abrir chamados sobre reservas, cancelamentos e problemas com hospedagens.
+   - Chat com suporte 24h para emergências durante viagens.
+   - Atualizações em tempo real sobre status de reservas.
+   - Pesquisa de satisfação após o atendimento e sugestões personalizadas de destinos.
+
+- Mobile
+  - Eu como usuário do aplicativo desejo abrir um chamado;
+  - Eu como usuário do aplicativo desejo conversar através de um chat com um usuário do gerenciador;
+  - Eu como usuário do aplicativo desejo pontuar meu atendimento do chamado que foi encerrado (pesquisa de satisfação);
+- Atendimento
+  - Eu como usuário do gerenciador desejo realizar login;
+  - Eu como usuário do gerenciador desejo receber atualizações, em tempo real, de chamados solicitados por usuários do aplicativo;
+  - Eu como usuário do gerenciador desejo conversar através de um chat com usuários do aplicativo;
+  - Eu como usuário do gerenciador desejo finalizar um atendimento;
