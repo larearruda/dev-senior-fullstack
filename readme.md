@@ -1,11 +1,17 @@
 # Desafio - Desenvolvedor Fullstack Sênior
-Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato à vaga de Desenvolvedor Fullstack Sênior.
+Proposta para desenvolver capacidades técnicas de Desenvolvedor FullStack Senior que peguei de um outro github achado no Google.
 
-## Instruções
-1. Faça um fork deste repositório;
-2. Utilize alguma das tecnologias (front-end e back-end) informadas na proposta desse desafio;
-3. Crie um passo a passo de como rodar a sua aplicação;
-4. Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação;
+~~Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato à vaga de Desenvolvedor Fullstack Sênior.~~ 
+
+
+## ~~Instruções~~
+1. ~~Faça um fork deste repositório;~~
+2. ~~Utilize alguma das tecnologias (front-end e back-end) informadas na proposta desse desafio;~~
+3. ~~Crie um passo a passo de como rodar a sua aplicação;~~
+4. ~~Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação;~~
+
+## Objetivos
+1. Containerizar projeto e criar um passo a passo de como rodar a aplicação
 
 ## Proposta
 Você deverá desenvolver uma central de ajuda. Esta plataforma deverá possuir uma API construída com Node.js utilizando o framework de sua preferência que servirá para fornecer a comunicação necessária a uma aplicação web ReactJS por onde os atendentes estarão dando suporte a usuários que abrirão chamados por um aplicativo móvel construído com React Native.
