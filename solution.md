@@ -3,6 +3,8 @@
 [Frontend Atendimento ao Usuário](./front-atendimento/README.md)
 ```shell
 npx create-react-app front-atendimento
+cd front-atendimento
+npm start
 ```
 
 ### Backend Nest.js back-api
@@ -21,10 +23,10 @@ npx expo start
 ```
 ## Ideias conceituais do projeto
 - Atendimento para Turismo e Hotéis (Exemplo: Booking, Airbnb, CVC, Decolar)
-   - Viajantes podem abrir chamados sobre reservas, cancelamentos e problemas com hospedagens.
-   - Chat com suporte 24h para emergências durante viagens.
-   - Atualizações em tempo real sobre status de reservas.
-   - Pesquisa de satisfação após o atendimento e sugestões personalizadas de destinos.
+  - Viajantes (usuário do aplicativo) podem abrir chamados sobre reservas, cancelamentos e problemas com hospedagens.
+  - Atendentes (usuário do gerenciador)  cancelamentos e problemas com hospedagens.
+  - Pesquisa de satisfação após o atendimento e sugestões personalizadas de destinos.
+   
 
 - Mobile
   - Eu como usuário do aplicativo desejo abrir um chamado;
