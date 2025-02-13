@@ -2,9 +2,9 @@
 ### Frontend React - front-atendimento 
 [Frontend Atendimento ao Usuário](./front-atendimento/README.md)
 ```shell
-npx create-react-app front-atendimento
+yarn create react-app front-atendimento --template typescript
 cd front-atendimento
-npm start
+yarn start
 ```
 
 ### Backend Nest.js back-api
