@@ -37,3 +37,23 @@ npx expo start
   - Eu como usuário do gerenciador desejo receber atualizações, em tempo real, de chamados solicitados por usuários do aplicativo;
   - Eu como usuário do gerenciador desejo conversar através de um chat com usuários do aplicativo;
   - Eu como usuário do gerenciador desejo finalizar um atendimento;
+
+Dados Pessoais: 
+- Nome completo, E-mail, Telefone, Número da reserva (se aplicável)
+
+Detalhes do Chamado
+- Tipo de solicitação (exemplo: Reclamação, Dúvida, Solicitação Especial)
+- Categoria do problema (exemplo: Check-in, Wi-Fi, Limpeza, Alimentação, Cobrança, Cancelamento)
+- Descrição do problema ou solicitação
+- Data e hora do ocorrido
+
+Localização
+- Nome do hotel
+- Cidade/país
+- Número do quarto (se aplicável)
+
+Anexos (Opcional)
+- Fotos ou documentos relacionados ao chamado (exemplo: comprovante de pagamento, foto de um problema no quarto)
+
+Preferência de Contato
+- Como deseja ser respondido (E-mail, Telefone, WhatsApp)

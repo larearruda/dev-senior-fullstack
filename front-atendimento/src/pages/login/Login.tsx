@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Email:', email);
     console.log('Password:', password);
+    navigate('/tickets');
     // Aqui você pode adicionar a lógica de autenticação, como chamadas API, etc.
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    
       <Box
         sx={{
           display: 'flex',
@@ -23,6 +26,11 @@ const Login: React.FC = () => {
           border: '1px solid #ddd',
           borderRadius: 1,
           boxShadow: 3,
+          justifyContent: 'center',
+          position: 'absolute', // Usa position absoluta para centralizar
+          top: '50%', // Posiciona no meio da tela
+          left: '50%', // Posiciona no meio da tela
+          transform: 'translate(-50%, -50%)', // Ajusta para garantir que a caixa esteja perfeitamente centralizada
         }}
       >
         <Typography variant="h5" gutterBottom>
@@ -58,7 +66,6 @@ const Login: React.FC = () => {
           </Button>
         </form>
       </Box>
-    </Container>
   );
 };
 
