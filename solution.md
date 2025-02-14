@@ -21,6 +21,19 @@ npx create-expo-app mobile-chat
 cd mobile-chat 
 npx expo start
 ```
+
+### Configuração Github
+Para erro de autorizaçao do Github do tipo:
+```shell
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+```
+
+Adicionar novamente a chave ssh para resolver
+```shell
+ssh-add ~/.ssh/larissa.arruda94 
+```
+
 ## Ideias conceituais do projeto
 - Atendimento para Turismo e Hotéis (Exemplo: Booking, Airbnb, CVC, Decolar)
   - Viajantes (usuário do aplicativo) podem abrir chamados sobre reservas, cancelamentos e problemas com hospedagens.
