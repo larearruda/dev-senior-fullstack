@@ -32,6 +32,8 @@ fatal: Could not read from remote repository.
 Adicionar novamente a chave ssh para resolver
 ```shell
 ssh-add ~/.ssh/larissa.arruda94 
+git config user.email "larissa.arruda94@gmail.com"
+
 ```
 
 ## Ideias conceituais do projeto
