@@ -59,7 +59,7 @@ const TicketsDashboard: React.FC = () => {
 					{
 						tickets.map((ticket: Ticket) => (
 							<TableRow key={ticket.id}>
-								<TableCell> {ticket.codReserva} </TableCell>
+								<TableCell> {ticket.bookingCode} </TableCell>
 								<TableCell> {ticket.status} </TableCell>
 								<TableCell> {ticket.title} </TableCell>
 								<TableCell></TableCell>

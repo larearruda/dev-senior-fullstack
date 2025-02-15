@@ -9,7 +9,7 @@
 // });
 export interface Ticket {
 	id: number, 
-	codReserva: string,
+	bookingCode: string,
 	title: string,
 	status: string
 }
@@ -33,9 +33,9 @@ export const getAllTickets = async (): Promise<any> => {
     return new Promise((resolve, reject)=> {
 			try {
 				const tickets = [
-					{ id: 1, codReserva: "2025ABAUE", title: "Problema com Wi-Fi", status: "Aberto" },
-					{ id: 2, codReserva: "2025YNBRB", title: "Ar-condicionado não funciona", status: "Em andamento" },
-					{ id: 3, codReserva: "2025ABAUE", title: "Problema com Wi-Fi", status: "Novo" },
+					{ id: 1, bookingCode: "2025ABAUE", title: "Problema com Wi-Fi", status: "Aberto" },
+					{ id: 2, bookingCode: "2025YNBRB", title: "Ar-condicionado não funciona", status: "Em andamento" },
+					{ id: 3, bookingCode: "2025ABAUE", title: "Problema com Wi-Fi", status: "Novo" },
 				];
 				resolve(tickets);
 			} catch (error) {
