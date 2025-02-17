@@ -10,8 +10,11 @@ const TicketsDashboard: React.FC = () => {
 	const [tickets, setTickets] =  useState([]);
 
 	const getTickets = async () => {
-		let t = await getAllTickets();
-		setTickets(t);
+		let t = (await getAllTickets());
+		console.log('respposta da api formatada', t)
+		if(t.success) {
+			setTickets(t.response);
+		}
 	}
 
 	// interface FilterTicket
@@ -26,16 +29,8 @@ const TicketsDashboard: React.FC = () => {
 
 	useEffect(() => {
 		getTickets();
+		console.log('tickets:', tickets)
 	}, [])
-
-	// const bull = (
-	// 	<Box
-	// 		component="span"
-	// 		sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-	// 	>
-	// 		•
-	// 	</Box>
-	// );
   
 	const allTicketsTable = (
 			<TableContainer 
@@ -56,8 +51,7 @@ const TicketsDashboard: React.FC = () => {
           </TableRow>
 				</TableHead>
 				<TableBody>
-					{
-						tickets.map((ticket: Ticket) => (
+					{ tickets.map((ticket: Ticket) => (
 							<TableRow key={ticket.id}>
 								<TableCell> {ticket.bookingCode} </TableCell>
 								<TableCell> {ticket.status} </TableCell>

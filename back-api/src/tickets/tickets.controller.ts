@@ -14,6 +14,7 @@ export class TicketsController {
 
   @Get()
   findAll() {
+    console.log('\n\n EXIBIR TODOS TICKETS')
     return this.ticketsService.findAll();
   }
 
