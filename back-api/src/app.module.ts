@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { HealthModule } from './modules/health/health.module';
+import { HealthModule } from './health/health.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
-import { TicketModule } from './modules/ticket/ticket.module';
+import { BookingsModule } from './bookings/bookings.module';
+import { TicketsModule } from './tickets/tickets.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { TicketModule } from './modules/ticket/ticket.module';
       synchronize: true, // ⚠️ Apenas para desenvolvimento! Em produção, use migrations
     }),
     HealthModule,
-    TicketModule,
+    BookingsModule,
+    TicketsModule,
   ],
 })
 export class AppModule {

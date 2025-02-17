@@ -66,6 +66,35 @@ sqlite>
 SELECT * FROM nome_da_tabela;
 ``` 
 
+## Conceitos NestJs
+
+```shell
+# criar novo modulo 
+nest g mo
+
+# criar novo controler 
+nest g co
+
+# criar novo service
+nest g s
+
+# criar um novo resource
+nest g resource
+
+```
+
+### DTO - Data Transfer Object 
+DTO (Data Transfer Object) é um objeto usado para transferir dados entre diferentes camadas de uma aplicação. No NestJS, ele é utilizado principalmente para validar e estruturar os dados recebidos em um endpoint antes que sejam processados.
+🎯 Por que usar DTOs?
+
+✅ Validação de dados → Impede que dados inválidos cheguem ao serviço.
+
+✅ Segurança → Evita que o usuário envie informações inesperadas.
+
+✅ Facilidade de manutenção → Define claramente o formato dos dados esperados.
+
+✅ Redução de código repetitivo → Centraliza a lógica de estruturação dos dados.
+
 ## Compile and run the project
 
 ```bash
