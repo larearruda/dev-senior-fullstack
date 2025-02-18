@@ -19,17 +19,12 @@ const TicketsDashboard: React.FC = () => {
 
 	// interface FilterTicket
 	const filterTickets  = (status: string) => {
-		let filtered = tickets.map((t: Ticket) => {
-			if(t.status === status){
-				return t;
-			}
-		})
+		let filtered = tickets.filter((t: Ticket) => t.status === status);
 		return filtered.length;
 	};
 
 	useEffect(() => {
 		getTickets();
-		console.log('tickets:', tickets)
 	}, [])
   
 	const allTicketsTable = (

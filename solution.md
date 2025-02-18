@@ -72,3 +72,9 @@ Anexos (Opcional)
 
 Preferência de Contato
 - Como deseja ser respondido (E-mail, Telefone, WhatsApp)
+
+## tabelas
+- [x] ticket 
+- [x] booking 
+- [ ] customer 
+- [ ] hotel

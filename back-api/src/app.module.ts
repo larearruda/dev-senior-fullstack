@@ -13,6 +13,7 @@ import { TicketsModule } from './tickets/tickets.module';
       // entities: [__dirname + '/**/*.entity{.ts,.js}'],
       autoLoadEntities: true,
       synchronize: true, // ⚠️ Apenas para desenvolvimento! Em produção, use migrations
+      logging: true,
     }),
     HealthModule,
     BookingsModule,
