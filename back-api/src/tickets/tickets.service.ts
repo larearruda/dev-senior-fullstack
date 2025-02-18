@@ -22,7 +22,6 @@ export class TicketsService {
   }
 
   findAll() {
-    // return `This action returns all tickets`;
     const tickets = this.ticketsRepository.find();
     return tickets;
   }
