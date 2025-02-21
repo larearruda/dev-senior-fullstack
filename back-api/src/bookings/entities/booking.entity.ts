@@ -1,29 +1,28 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Booking {
-	@PrimaryGeneratedColumn()
-	id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-	@Column()
-	bookingCode: string;
+  @Column()
+  bookingCode: string;
 
-	@Column()
-	customerId: number;
+  @Column()
+  customerId: number;
 
-	@Column()
-	hotelId: number;
+  @Column()
+  hotelId: number;
 
-	@Column()
-	checkInDate: string;
+  @Column()
+  checkInDate: string;
 
-	@Column()
-	checkOutDate: string;
+  @Column()
+  checkOutDate: string;
 
-	
-	@Column()
-	status: string;
+  @Column()
+  status: string;
 
-	/*
+  /*
 	customerId (string) → ID do cliente que fez a reserva
 	hotelId (string) → ID do hotel onde a reserva foi feita
 	roomId (string) → ID do quarto reservado
