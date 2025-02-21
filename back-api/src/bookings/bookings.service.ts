@@ -26,7 +26,6 @@ export class BookingsService {
   }
 
   findByCustomerId(customerId: string) {
-    // return `This action returns all bookings made from user #${id}`;
     const bookingsByUserId = this.bookingsRepository
       .createQueryBuilder('booking')
       .where('booking.customerId = :customerId', { customerId: customerId })
