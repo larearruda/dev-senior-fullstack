@@ -9,8 +9,10 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { StackParamList } from "..";
+import { StackParamList } from "../..";
 import Icon from "@react-native-vector-icons/fontawesome";
+import { useDispatch } from "react-redux";
+import { login } from "@/app/store/auth";
 
 type SignInProps = {
   navigation: StackNavigationProp<StackParamList, "SignIn">;
@@ -20,20 +22,29 @@ export default function SignIn({ navigation }: SignInProps) {
   const [email, onChangeEmail] = useState("");
   const [password, onChangePassword] = useState("");
 
+  const dispatch = useDispatch();
+
   const handleSubmit = () => {
-    Alert.alert("fazer login");
-    // navigation.navigate("Home");
+    // Alert.alert("fazer login");
+    dispatch(login(), {
+      id: 1,
+      uuid: "65f1e9ad-ab0c-4c3f-9e3d-99e27ecce7c5",
+      username: email,
+    });
+    navigation.navigate("Home");
   };
 
   return (
     <View style={styles.loginView}>
       <Text style={styles.loginTitleHeader}>Login</Text>
+      <Text style={styles.inputLabel}>Email</Text>
       <TextInput
         style={styles.inputLogin}
         onChangeText={onChangeEmail}
         value={email}
         placeholder="Email or username"
       />
+      <Text style={styles.inputLabel}>Password</Text>
       <TextInput
         style={styles.inputLogin}
         onChangeText={onChangePassword}
@@ -65,6 +76,9 @@ const styles = StyleSheet.create({
   loginTitleHeader: {
     fontSize: 40,
     alignItems: "center",
+    padding: 10,
+  },
+  inputLabel: {
     padding: 10,
   },
   inputLogin: {
