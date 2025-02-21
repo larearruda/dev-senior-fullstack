@@ -4,8 +4,10 @@ import { StackParamList } from "../..";
 import { useSelector, useDispatch } from "react-redux";
 import { ApplicationState } from "@/app/store/store";
 import { getBookingsByCustomerId } from "@/app/services/bookings-service";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Booking } from "@/app/model/Booking";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { RefreshControl, ScrollView } from "react-native-gesture-handler";
 
 // Definição do tipo para as propriedades de navegação
 export type HomeScreenProps = {
@@ -18,27 +20,48 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
   const [bookings, setBookings] = useState<Booking[]>([]);
 
   const getCustomerBookings = async () => {
-    const bookings = await getBookingsByCustomerId("1");
-    setBookings(bookings);
+    const customerBookings = await getBookingsByCustomerId("1");
+    setBookings(customerBookings);
   };
 
   useEffect(() => {
     getCustomerBookings();
-  });
+  }, [bookings]);
+
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+  }, []);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>🏠 Tela Inicial com minhas reservas </Text>
-      <Text style={styles.text}> {JSON.stringify(auth)}</Text>
-      {Array.isArray(bookings) &&
-        bookings.map((b: Booking) => (
-          <>
-            <View style={styles.bookingCard}>
-              <Text> {b.bookingCode} </Text>
-            </View>
-          </>
-        ))}
-    </View>
+    // SafeAreaProvider = exibe a tela abaixo da barra de notificaçao dos celulares
+    <SafeAreaProvider>
+      <SafeAreaView>
+        {/* header */}
+        <View style={styles.homeHeader}>
+          <Text style={styles.text}>🏠 Minhas reservas </Text>
+        </View>
+        {/* header */}
+        <ScrollView
+          contentContainerStyle={styles.scrollView}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+        >
+          {bookings.map((b: Booking) => (
+            <>
+              <View style={styles.bookingCard}>
+                <Text> {b.bookingCode} </Text>
+              </View>
+            </>
+          ))}
+        </ScrollView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -47,6 +70,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  homeHeader: {
+    height: "20%",
   },
   text: {
     fontSize: 18,
@@ -60,5 +86,8 @@ const styles = StyleSheet.create({
     margin: 12,
     // justifyContent: "center",
     width: "90%",
+  },
+  scrollView: {
+    flex: 1,
   },
 });
