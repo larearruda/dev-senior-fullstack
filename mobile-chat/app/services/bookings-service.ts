@@ -12,9 +12,10 @@ export const ApiHttp = axios.create({
 export const getBookingsByCustomerId = async (
   customerId: string
 ): Promise<any> => {
+  console.log("acessando api");
   try {
     const response = await ApiHttp.get("bookings/customerId/" + customerId);
-    return response.data;
+    return { success: true, response: response.data };
   } catch (error) {
     console.error("Erro:", error);
     return { success: false, error: error };

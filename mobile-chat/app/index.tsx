@@ -23,7 +23,6 @@ function InnerApp() {
   const dispatch = useDispatch();
 
   // const [userLogged, setUserLogged] = useState<User>();
-  const [text, setText] = useState("");
 
   const userLogged = {
     id: 1,
