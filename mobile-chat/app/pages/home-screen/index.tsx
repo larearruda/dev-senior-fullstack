@@ -1,5 +1,5 @@
 import { StackNavigationProp } from "@react-navigation/stack";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity, Alert } from "react-native";
 import { StackParamList } from "../..";
 import { useSelector, useDispatch } from "react-redux";
 import { ApplicationState } from "@/app/store/store";
@@ -9,6 +9,7 @@ import { Booking } from "@/app/model/Booking";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { RefreshControl, ScrollView } from "react-native-gesture-handler";
 import styles from "./homescreen.styles";
+import Header from "@/app/components/header";
 
 // Definição do tipo para as propriedades de navegação
 export type HomeScreenProps = {
@@ -18,8 +19,8 @@ export type HomeScreenProps = {
 export default function HomeScreen({ navigation }: HomeScreenProps) {
   const auth = useSelector((state: ApplicationState) => state.authReducer);
   const dispatch = useDispatch();
-  const [bookings, setBookings] = useState<Booking[]>([]);
 
+  const [bookings, setBookings] = useState<Booking[]>([]);
   const [refreshing, setRefreshing] = useState(false);
 
   const getCustomerBookings = async () => {
@@ -30,12 +31,10 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
     } else setBookings([]);
     // console.log(bookings);
   };
+
   const onRefreshBookings = useCallback(() => {
     console.log("atualizar reservas");
     setRefreshing(true);
-    // setTimeout(() => {
-    //   setRefreshing(false);
-    // }, 1000);
     getBookingsByCustomerId("1")
       .then((updatedBookings) => {
         setRefreshing(false);
@@ -48,6 +47,11 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
         setBookings([]);
       });
   }, []);
+
+  const onPressBookingActions = (booking: Booking) => {
+    console.log(booking);
+    navigation.navigate("CreateTicket");
+  };
 
   useEffect(() => {
     getCustomerBookings();
@@ -67,14 +71,18 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
               />
             }
           >
-            {/* header */}
-            <View style={styles.homeHeader}>
-              <Text>🏠 Minhas viagens </Text>
-            </View>
-            {/* header */}
+            <Header headerTitle="Minhas viagens" />
             {bookings.map((b: Booking) => (
               <View style={styles.bookingCard} key={b.id}>
-                <Text> {b.bookingCode} </Text>
+                <View style={styles.bookingCardInfo}>
+                  <Text> {b.bookingCode} </Text>
+                </View>
+
+                <View style={styles.bookingCardActions}>
+                  <TouchableOpacity onPress={() => onPressBookingActions(b)}>
+                    <Text>Preciso de ajuda </Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             ))}
           </ScrollView>

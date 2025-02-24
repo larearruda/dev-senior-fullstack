@@ -1,10 +1,20 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  safeAreaBackground: {
+    backgroundColor: "#dbd8d8",
+  },
   loginView: {
     justifyContent: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#dbd8d8",
     height: "100%",
+  },
+  loginBox: {
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderColor: "#dbd8d8",
+    borderRadius: 5,
+    margin: 10,
   },
   loginTitleHeader: {
     fontSize: 40,
@@ -21,6 +31,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderColor: "#dbd8d8",
     borderRadius: 5,
+    // boxShadow: "3px 3px #dbd8d8",
   },
   loginBtn: {
     height: 40,

@@ -30,33 +30,35 @@ export default function SignIn({ navigation }: SignInProps) {
   return (
     // SafeAreaProvider = exibe a tela abaixo da barra de notificaçao dos celulares
     <SafeAreaProvider>
-      <SafeAreaView>
+      <SafeAreaView style={styles.safeAreaBackground}>
         <View style={styles.loginView}>
-          <Text style={styles.loginTitleHeader}>Login</Text>
-          <Text style={styles.inputLabel}>Email</Text>
-          <TextInput
-            style={styles.inputLogin}
-            onChangeText={onChangeEmail}
-            value={email}
-            placeholder="Email or username"
-          />
-          <Text style={styles.inputLabel}>Password</Text>
-          <TextInput
-            style={styles.inputLogin}
-            onChangeText={onChangePassword}
-            value={password}
-            placeholder="Password"
-          />
-          y
-          <TouchableOpacity style={styles.loginBtn} onPress={handleSubmit}>
-            <Text style={styles.loginBtnLabel}>Log in </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.loginWithGoogleBtn}>
-            <Text style={styles.loginWithGoogleBtnLabel}>
-              Continue with Google
-            </Text>
-            {/* <FontAwesomeIcon icon={faGoogle} /> */}
-          </TouchableOpacity>
+          <View style={styles.loginBox}>
+            <Text style={styles.loginTitleHeader}>Login</Text>
+            <Text style={styles.inputLabel}>Email</Text>
+            <TextInput
+              style={styles.inputLogin}
+              onChangeText={onChangeEmail}
+              value={email}
+              placeholder="Email or username"
+            />
+            <Text style={styles.inputLabel}>Password</Text>
+            <TextInput
+              style={styles.inputLogin}
+              onChangeText={onChangePassword}
+              value={password}
+              placeholder="Password"
+            />
+            y
+            <TouchableOpacity style={styles.loginBtn} onPress={handleSubmit}>
+              <Text style={styles.loginBtnLabel}>Log in </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.loginWithGoogleBtn}>
+              <Text style={styles.loginWithGoogleBtnLabel}>
+                Continue with Google
+              </Text>
+              {/* <FontAwesomeIcon icon={faGoogle} /> */}
+            </TouchableOpacity>
+          </View>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

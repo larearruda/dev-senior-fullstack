@@ -1,21 +1,18 @@
-import { useEffect, useState } from "react";
-import { Text, View, TextInput, Button, StyleSheet } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import {
-  createStackNavigator,
-  StackNavigationProp,
-} from "@react-navigation/stack";
+import { useEffect } from "react";
+import { createStackNavigator } from "@react-navigation/stack";
 import SignIn from "./pages/signin";
-import HomeScreen from "./pages/homescreen";
 import { Provider, useDispatch } from "react-redux";
 import { login } from "./store/auth";
 import {} from "react-redux";
 import { store } from "./store/store";
+import HomeScreen from "./pages/home-screen";
+import CreateTicket from "./pages/create-ticket";
 
 // Definindo os tipos de rotas
 export type StackParamList = {
   Home: undefined;
   SignIn: undefined;
+  CreateTicket: undefined;
 };
 
 const Stack = createStackNavigator();
@@ -45,6 +42,11 @@ function InnerApp() {
         <Stack.Screen
           name="SignIn"
           component={SignIn}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CreateTicket"
+          component={CreateTicket}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
