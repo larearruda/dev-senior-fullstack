@@ -1,24 +1,5 @@
-import { StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import { DefaultAppTheme } from "../theme/globals";
-
-const styles = StyleSheet.create({
-  primary: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 5,
-    borderColor: "#4F4F4F",
-    backgroundColor: "#4F4F4F",
-    alignItems: "center",
-  },
-  primaryLabel: {
-    color: "#FFF",
-  },
-});
-
-export default styles;
 
 interface InputButtonColorProps {
   color: "default" | "primary" | "warning" | "success" | "danger";
