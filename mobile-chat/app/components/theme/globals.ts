@@ -1,5 +1,18 @@
-const enum APP_THEME_COLORS {
+//tipagem para usar de referencia nos outros componentes
+export const COLOR_OPTIONS = {
+  default: "default",
+  primary: "primary",
+  success: "success",
+  warning: "warning",
+  danger: "danger",
+  dark: "dark",
+};
+export type ColorOptions = keyof typeof COLOR_OPTIONS;
+
+//cores do tema escolhido
+const enum DEFAULT_THEME {
   dark_gray = "#4f4f4f",
+  light_gray = "#dbd8d8",
   white = "#ffffff",
   blue = "#245AB7",
   red = "#CF2121",
@@ -8,14 +21,21 @@ const enum APP_THEME_COLORS {
 }
 
 export const DefaultAppTheme = {
-  button_default: APP_THEME_COLORS.white,
-  button_default_label: APP_THEME_COLORS.dark_gray,
-  button_primary: APP_THEME_COLORS.blue,
-  button_primary_label: APP_THEME_COLORS.white,
-  button_warning: APP_THEME_COLORS.yellow,
-  button_warning_label: APP_THEME_COLORS.dark_gray,
-  button_success: APP_THEME_COLORS.green,
-  button_success_label: APP_THEME_COLORS.white,
-  button_danger: APP_THEME_COLORS.red,
-  button_danger_label: APP_THEME_COLORS.white,
+  button_default: DEFAULT_THEME.white,
+  button_default_label: DEFAULT_THEME.dark_gray,
+  button_primary: DEFAULT_THEME.blue,
+  button_primary_label: DEFAULT_THEME.white,
+  button_warning: DEFAULT_THEME.yellow,
+  button_warning_label: DEFAULT_THEME.dark_gray,
+  button_success: DEFAULT_THEME.green,
+  button_success_label: DEFAULT_THEME.white,
+  button_danger: DEFAULT_THEME.red,
+  button_danger_label: DEFAULT_THEME.white,
+  button_dark: DEFAULT_THEME.dark_gray,
+  button_dark_label: DEFAULT_THEME.white,
+  //
+  bg_white: DEFAULT_THEME.white,
+  //
+  border_dark_gray: DEFAULT_THEME.dark_gray,
+  border_light_gray: DEFAULT_THEME.light_gray,
 };

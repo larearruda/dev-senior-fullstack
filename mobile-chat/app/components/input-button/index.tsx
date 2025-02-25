@@ -1,8 +1,9 @@
+import { ColorOptions } from "../theme/globals";
 import { Button, ButtonLabel } from "./input-button.styles";
 
 interface InputButtonProps {
   buttonLabel: string;
-  color: "default" | "primary" | "warning" | "success" | "danger";
+  color: ColorOptions;
   onPress?: () => any;
 }
 export default function InputButton({

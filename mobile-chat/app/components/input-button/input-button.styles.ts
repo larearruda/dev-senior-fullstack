@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
-import { DefaultAppTheme } from "../theme/globals";
+import { ColorOptions, DefaultAppTheme } from "../theme/globals";
 
-interface InputButtonColorProps {
-  color: "default" | "primary" | "warning" | "success" | "danger";
+export interface InputButtonColorProps {
+  color: ColorOptions;
 }
 
 export const Button = styled.TouchableOpacity<InputButtonColorProps>`
@@ -24,6 +24,8 @@ export const Button = styled.TouchableOpacity<InputButtonColorProps>`
         return DefaultAppTheme.button_success;
       case "danger":
         return DefaultAppTheme.button_danger;
+      case "dark":
+        return DefaultAppTheme.button_dark;
     }
   }};
   background-color: ${(props: InputButtonColorProps) => {
@@ -38,6 +40,8 @@ export const Button = styled.TouchableOpacity<InputButtonColorProps>`
         return DefaultAppTheme.button_success;
       case "danger":
         return DefaultAppTheme.button_danger;
+      case "dark":
+        return DefaultAppTheme.button_dark;
     }
   }};
 `;
@@ -55,6 +59,8 @@ export const ButtonLabel = styled.Text`
         return DefaultAppTheme.button_success_label;
       case "danger":
         return DefaultAppTheme.button_danger_label;
+      case "dark":
+        return DefaultAppTheme.button_dark_label;
     }
   }};
 `;

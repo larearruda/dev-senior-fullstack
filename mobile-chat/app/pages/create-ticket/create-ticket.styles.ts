@@ -1,20 +1,16 @@
-import { StyleSheet } from "react-native";
+import { DefaultAppTheme } from "@/app/components/theme/globals";
+import styled from "styled-components/native";
 
-const styles = StyleSheet.create({
-  container: {
-    height: "100%",
-  },
-  formBox: {
-    flex: 1,
-    padding: 10,
-    margin: 12,
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: "#dbd8d8",
-    backgroundColor: "#FFF",
-    // height: 150,
-    // backgroundColor: "red",
-  },
-});
+export const ContainerView = styled.View`
+  height: 100%;
+`;
 
-export default styles;
+export const FormView = styled.View`
+  flex: 1;
+  padding: 10px;
+  margin: 12px;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: ${DefaultAppTheme.border_light_gray};
+  background-color: ${DefaultAppTheme.bg_white};
+`;
