@@ -6,14 +6,14 @@ const styles = StyleSheet.create({
   },
   loginView: {
     justifyContent: "center",
-    backgroundColor: "#dbd8d8",
+    backgroundColor: "#dbd8d5",
     height: "100%",
   },
   loginBox: {
     backgroundColor: "#fff",
     borderWidth: 1,
     borderColor: "#dbd8d8",
-    borderRadius: 5,
+    borderRadius: 10,
     margin: 10,
   },
   loginTitleHeader: {

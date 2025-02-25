@@ -3,16 +3,18 @@ import { createStackNavigator } from "@react-navigation/stack";
 import SignIn from "./pages/signin";
 import { Provider, useDispatch } from "react-redux";
 import { login } from "./store/auth";
-import {} from "react-redux";
 import { store } from "./store/store";
 import HomeScreen from "./pages/home-screen";
 import CreateTicket from "./pages/create-ticket";
+import { Booking } from "./model/Booking";
+import Chat from "./pages/chat";
 
 // Definindo os tipos de rotas
 export type StackParamList = {
   Home: undefined;
   SignIn: undefined;
-  CreateTicket: undefined;
+  CreateTicket: { booking: Booking };
+  Chat: { booking: Booking };
 };
 
 const Stack = createStackNavigator();
@@ -47,6 +49,11 @@ function InnerApp() {
         <Stack.Screen
           name="CreateTicket"
           component={CreateTicket}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Chat"
+          component={Chat}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

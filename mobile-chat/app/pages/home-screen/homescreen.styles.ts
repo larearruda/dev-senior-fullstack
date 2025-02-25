@@ -20,11 +20,14 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   bookingCardActions: {
-    flex: 1,
-    alignSelf: "center",
-    // borderWidth: 1,
-    // borderLeftWidth: 1,
-    // alignItems: "flex-end",
+    flexDirection: "row",
+  },
+  bookingCardActionLeft: {
+    alignItems: "flex-start",
+  },
+  bookingCardActionRight: {
+    alignItems: "flex-end",
+    // paddingRight: 10
   },
 });
 

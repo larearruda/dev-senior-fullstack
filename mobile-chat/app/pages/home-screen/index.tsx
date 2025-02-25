@@ -10,6 +10,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { RefreshControl, ScrollView } from "react-native-gesture-handler";
 import styles from "./homescreen.styles";
 import Header from "@/app/components/header";
+import InputButton from "@/app/components/input-button";
 
 // Definição do tipo para as propriedades de navegação
 export type HomeScreenProps = {
@@ -50,7 +51,11 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
 
   const onPressBookingActions = (booking: Booking) => {
     console.log(booking);
-    navigation.navigate("CreateTicket");
+    navigation.navigate("CreateTicket", { booking: booking });
+  };
+
+  const onPressTalkWithChat = (booking: Booking) => {
+    navigation.navigate("Chat", { booking: booking });
   };
 
   useEffect(() => {
@@ -79,9 +84,27 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
                 </View>
 
                 <View style={styles.bookingCardActions}>
-                  <TouchableOpacity onPress={() => onPressBookingActions(b)}>
-                    <Text>Preciso de ajuda </Text>
-                  </TouchableOpacity>
+                  <View style={styles.bookingCardActionLeft}>
+                    {/* <TouchableOpacity onPress={() => onPressBookingActions(b)}>
+                      <Text>Abrir uma solicitação</Text>
+                    </TouchableOpacity> */}
+                    <InputButton
+                      buttonLabel="Abrir solicitação"
+                      onPress={() => onPressBookingActions(b)}
+                    />
+                  </View>
+
+                  <View style={styles.bookingCardActionRight}>
+                    {/* <TouchableOpacity
+                      onPress={() => Alert.alert("chamar atendente")}
+                    >
+                      <Text>Falar com um atendente</Text>
+                    </TouchableOpacity> */}
+                    <InputButton
+                      buttonLabel="Falar com um atendente"
+                      onPress={() => onPressTalkWithChat(b)}
+                    />
+                  </View>
                 </View>
               </View>
             ))}

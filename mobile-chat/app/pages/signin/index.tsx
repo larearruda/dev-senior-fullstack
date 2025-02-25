@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { login } from "@/app/store/auth";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import styles from "./signin.styles";
+import InputButton from "@/app/components/input-button";
 
 type SignInProps = {
   navigation: StackNavigationProp<StackParamList, "SignIn">;
@@ -48,16 +49,12 @@ export default function SignIn({ navigation }: SignInProps) {
               value={password}
               placeholder="Password"
             />
-            y
-            <TouchableOpacity style={styles.loginBtn} onPress={handleSubmit}>
-              <Text style={styles.loginBtnLabel}>Log in </Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.loginWithGoogleBtn}>
-              <Text style={styles.loginWithGoogleBtnLabel}>
-                Continue with Google
-              </Text>
-              {/* <FontAwesomeIcon icon={faGoogle} /> */}
-            </TouchableOpacity>
+            <InputButton
+              buttonLabel="Acessar"
+              onPress={handleSubmit}
+              color="primary"
+            />
+            <InputButton buttonLabel="Continuar com Google" color="default" />
           </View>
         </View>
       </SafeAreaView>
