@@ -2,13 +2,15 @@ import { useState } from "react";
 import { TextBox, TextBoxLabel, TextView } from "./input-text.styles";
 
 interface InputButtonProps {
-  onChangeInputText: () => any;
+  value: string;
+  onChangeInputText: (text: string) => void;
   placeholder?: string;
   hasLabelOverIt?: boolean;
   labelOverIt?: string;
 }
 
 export default function InputText({
+  value,
   placeholder,
   hasLabelOverIt = false,
   labelOverIt,
@@ -19,7 +21,7 @@ export default function InputText({
     <TextView>
       {hasLabelOverIt && <TextBoxLabel>{labelOverIt} </TextBoxLabel>}
       <TextBox
-        value={textValue}
+        value={value}
         placeholder={placeholder}
         onChangeText={onChangeInputText}
       />

@@ -37,11 +37,13 @@ export default function SignIn({ navigation }: SignInProps) {
             <Text style={styles.loginTitleHeader}>Login</Text>
 
             <InputText
-              onChangeInputText={() => onChangeEmail}
+              value={email}
+              onChangeInputText={onChangeEmail}
               placeholder="E-mail ou nome de usuário"
             />
             <InputText
-              onChangeInputText={() => onChangePassword}
+              value={password}
+              onChangeInputText={onChangePassword}
               placeholder="Senha"
             />
             <InputButton
