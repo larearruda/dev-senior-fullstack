@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { BookingsModule } from './bookings/bookings.module';
 import { TicketsModule } from './tickets/tickets.module';
+import { ChatGateway } from './chat.gateway';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { TicketsModule } from './tickets/tickets.module';
     BookingsModule,
     TicketsModule,
   ],
+  providers: [ChatGateway],
 })
 export class AppModule {
   constructor(private dataSource: DataSource) {}

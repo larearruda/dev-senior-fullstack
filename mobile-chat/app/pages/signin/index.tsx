@@ -7,6 +7,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import styles from "./signin.styles";
 import InputButton from "@/app/components/input-button";
 import InputText from "@/app/components/input-text";
+import { login } from "@/app/store/auth";
 
 type SignInProps = {
   navigation: StackNavigationProp<StackParamList, "SignIn">;
@@ -19,13 +20,12 @@ export default function SignIn({ navigation }: SignInProps) {
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
-    Alert.alert("fazer login" + email + password);
-    // dispatch(login(), {
-    //   id: 1,
-    //   uuid: "65f1e9ad-ab0c-4c3f-9e3d-99e27ecce7c5",
-    //   username: email,
-    // });
-    // navigation.navigate("Home");
+    dispatch(login(), {
+      id: 1,
+      uuid: "65f1e9ad-ab0c-4c3f-9e3d-99e27ecce7c5",
+      username: email,
+    });
+    navigation.navigate("Home");
   };
 
   return (
