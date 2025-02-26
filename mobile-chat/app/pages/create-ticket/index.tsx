@@ -34,7 +34,7 @@ export default function CreateTicket({ navigation, route }: CreateTicketProps) {
               <Text> reserva numero # {booking.bookingCode} </Text>
             </FormView>
             <InputButton
-              color={ColorOptions.primary}
+              color="primary"
               buttonLabel="Criar solicitação"
               onPress={onClickButton}
             />
