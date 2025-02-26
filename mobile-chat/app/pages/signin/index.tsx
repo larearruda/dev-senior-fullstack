@@ -7,6 +7,7 @@ import { login } from "@/app/store/auth";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import styles from "./signin.styles";
 import InputButton from "@/app/components/input-button";
+import { ColorOptions } from "@/app/components/theme/globals";
 
 type SignInProps = {
   navigation: StackNavigationProp<StackParamList, "SignIn">;
@@ -52,9 +53,12 @@ export default function SignIn({ navigation }: SignInProps) {
             <InputButton
               buttonLabel="Acessar"
               onPress={handleSubmit}
-              color="primary"
+              color={ColorOptions.primary}
             />
-            <InputButton buttonLabel="Continuar com Google" color="default" />
+            <InputButton
+              buttonLabel="Continuar com Google"
+              color={ColorOptions.default}
+            />
           </View>
         </View>
       </SafeAreaView>

@@ -85,22 +85,16 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
 
                 <View style={styles.bookingCardActions}>
                   <View style={styles.bookingCardActionLeft}>
-                    {/* <TouchableOpacity onPress={() => onPressBookingActions(b)}>
-                      <Text>Abrir uma solicitação</Text>
-                    </TouchableOpacity> */}
                     <InputButton
+                      color="primary"
                       buttonLabel="Abrir solicitação"
                       onPress={() => onPressBookingActions(b)}
                     />
                   </View>
 
                   <View style={styles.bookingCardActionRight}>
-                    {/* <TouchableOpacity
-                      onPress={() => Alert.alert("chamar atendente")}
-                    >
-                      <Text>Falar com um atendente</Text>
-                    </TouchableOpacity> */}
                     <InputButton
+                      color="dark"
                       buttonLabel="Falar com um atendente"
                       onPress={() => onPressTalkWithChat(b)}
                     />

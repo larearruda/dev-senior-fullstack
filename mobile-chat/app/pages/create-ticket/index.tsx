@@ -1,11 +1,12 @@
 import { StackParamList } from "@/app";
 import Header from "@/app/components/header";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { Alert, RefreshControl, ScrollView, Text, View } from "react-native";
+import { Alert, ScrollView, Text } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import styles from "./create-ticket.styles";
+import { ContainerView, FormView } from "./create-ticket.styles";
 import { Booking } from "@/app/model/Booking";
 import InputButton from "@/app/components/input-button";
+import { ColorOptions } from "@/app/components/theme/globals";
 
 export type CreateTicketProps = {
   navigation: StackNavigationProp<StackParamList, "CreateTicket">;
@@ -26,30 +27,19 @@ export default function CreateTicket({ navigation, route }: CreateTicketProps) {
   return (
     <SafeAreaProvider>
       <SafeAreaView>
-        <View style={styles.container}>
+        <ContainerView>
           <Header headerTitle="Abrir um solicitação" />
-          <ScrollView
-          // contentContainerStyle={styles.scrollView}
-          // refreshControl={
-          // <RefreshControl
-          //   refreshing={refreshing}
-          //   onRefresh={onRefreshBookings}
-          // />
-          // }
-          >
-            <View style={styles.formBox}>
-              <Text> reserva numero {booking.bookingCode} </Text>
-            </View>
+          <ScrollView>
+            <FormView>
+              <Text> reserva numero # {booking.bookingCode} </Text>
+            </FormView>
             <InputButton
+              color={ColorOptions.primary}
               buttonLabel="Criar solicitação"
               onPress={onClickButton}
             />
           </ScrollView>
-        </View>
-        {/* <ScrollView
-        // contentContainerStyle={styles.scrollView}
-        >
-        </ScrollView> */}
+        </ContainerView>
       </SafeAreaView>
     </SafeAreaProvider>
   );
