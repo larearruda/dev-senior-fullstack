@@ -12,11 +12,10 @@ import {
 } from "@mui/material";
 import { getAllTickets, Ticket } from "../../services/Ticket.service";
 import InfoCard from "../../components/info-card/InfoCard";
-import SideMenu from "../../components/side-menu/SideMenu";
 import { useNavigate } from "react-router-dom";
 import MessageIcon from "@mui/icons-material/Message";
 
-const TicketsDashboard: React.FC = () => {
+const Dashboard: React.FC = () => {
   const [tickets, setTickets] = useState([]);
   const navigate = useNavigate();
 
@@ -88,7 +87,6 @@ const TicketsDashboard: React.FC = () => {
           marginTop: 5,
         }}
       >
-        <SideMenu />
         <InfoCard
           mainTitle="Chamados novos"
           numberCount={filterTickets("Novo")}
@@ -107,4 +105,4 @@ const TicketsDashboard: React.FC = () => {
   );
 };
 
-export default TicketsDashboard;
+export default Dashboard;

@@ -1,53 +1,43 @@
-import React from 'react';
-import { Box, Divider, styled } from '@mui/material';
-import MuiDrawer, { drawerClasses } from '@mui/material/Drawer';
+import React from "react";
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 
 const SideMenu: React.FC = () => {
-	// f7f9fa
-
-	const drawerWidth = 240;
-
-	const Drawer = styled(MuiDrawer)({
-		width: drawerWidth,
-		flexShrink: 0,
-		boxSizing: 'border-box',
-		mt: 10,
-		[`& .${drawerClasses.paper}`]: {
-			width: drawerWidth,
-			boxSizing: 'border-box',
-		},
-	});
-	return (
-		<Drawer
-			variant="permanent"
-			sx={{
-				display: { xs: 'none', md: 'block' },
-				[`& .${drawerClasses.paper}`]: {
-					backgroundColor: '#f7f9fa',
-				},
-			}}
-		>
-			<Box
-				sx={{
-					display: 'flex',
-					mt: 'calc(var(--template-frame-height, 0px) + 4px)',
-					p: 1.5,
-				}}
-			>
-			</Box>
-			<Divider />
-			<Box
-				sx={{
-					overflow: 'auto',
-					height: '100%',
-					display: 'flex',
-					flexDirection: 'column',
-				}}
-			>
-			</Box>
-		
-		</Drawer>
-	);
+  return (
+    <Drawer
+      variant="permanent"
+      anchor="left"
+      sx={{
+        width: 240,
+        flexShrink: 0,
+        "& .MuiDrawer-paper": {
+          width: 240,
+          boxSizing: "border-box",
+        },
+      }}
+    >
+      <Toolbar>
+        <Typography variant="h6">Menu</Typography>
+      </Toolbar>
+      <List>
+        <ListItem component="button">
+          <ListItemText primary="Dashboard" />
+        </ListItem>
+        <ListItem component="button">
+          <ListItemText primary="Chat" />
+        </ListItem>
+        <ListItem component="button">
+          <ListItemText primary="Configurações" />
+        </ListItem>
+      </List>
+    </Drawer>
+  );
 };
 
 export default SideMenu;
