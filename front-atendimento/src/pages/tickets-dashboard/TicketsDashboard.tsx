@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import {
+  Button,
   Paper,
   Table,
   TableBody,
@@ -67,8 +68,9 @@ const TicketsDashboard: React.FC = () => {
               <TableCell> {ticket.status} </TableCell>
               <TableCell> {ticket.title} </TableCell>
               <TableCell>
-                {" "}
-                <MessageIcon onClick={() => openChat(ticket)} />
+                <Button>
+                  <MessageIcon onClick={() => openChat(ticket)} />
+                </Button>
               </TableCell>
             </TableRow>
           ))}
