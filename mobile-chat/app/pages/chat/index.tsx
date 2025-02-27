@@ -10,14 +10,17 @@ import {
   View,
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import styles from "./chat.styles";
+import { ConversationBox, MessageReceived, MessageSent } from "./chat.styles";
 import { useEffect, useState } from "react";
 import {
+  ChatMessage,
   disconnectSocket,
   joinRoom,
   listenForMessages,
   sendMessage,
 } from "@/app/services/socket-service";
+import InputText from "@/app/components/input-text";
+import InputButton from "@/app/components/input-button";
 
 export type ChatProps = {
   navigation: StackNavigationProp<StackParamList, "Chat">;
@@ -26,17 +29,21 @@ export type ChatProps = {
 export default function Chat({ navigation }: ChatProps) {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<string[]>([]);
+  const [conversations, setConversation] = useState<ChatMessage[]>([]);
 
   useEffect(() => {
     joinRoom("room-1");
 
     listenForMessages((msg) => {
-      setMessages((prev) => [...prev, msg]);
+      console.log("nova mensagem recebida na conversa", msg);
+      var chatMsg = JSON.parse(msg);
+      // setMessages((prev) => [...prev, msg]);
+      setConversation((prev) => [...prev, chatMsg]);
     });
 
-    return () => {
-      disconnectSocket();
-    };
+    // return () => {
+    //   disconnectSocket();
+    // };
   }, []);
 
   const handleSend = () => {
@@ -48,19 +55,32 @@ export default function Chat({ navigation }: ChatProps) {
       <SafeAreaView>
         <Header headerTitle="Falar com atendente" />
         <ScrollView>
-          <View style={styles.conversationBox}>
-            <Text>conversas </Text>
-          </View>
+          {conversations.map((msg, index) => (
+            <>
+              {msg.origin === "MOBILE" && (
+                <MessageSent key={index}>
+                  <Text key={index}>{msg.message}</Text>
+                </MessageSent>
+              )}
+              {msg.origin === "BROWSER" && (
+                <MessageReceived key={index}>
+                  <Text key={index}>{msg.message}</Text>
+                </MessageReceived>
+              )}
+            </>
+          ))}
           <View>
-            {messages.map((msg, index) => (
-              <Text key={index}>{msg}</Text>
-            ))}
-            <TextInput
+            <InputText
+              onChangeInputText={setMessage}
               value={message}
-              onChangeText={setMessage}
               placeholder="Digite sua mensagem"
             />
-            <Button title="Enviar" onPress={handleSend} />
+            {/* <Button title="Enviar" onPress={handleSend} /> */}
+            <InputButton
+              buttonLabel="Enviar"
+              color="primary"
+              onPress={handleSend}
+            />
           </View>
         </ScrollView>
       </SafeAreaView>

@@ -13,6 +13,7 @@ export type ColorOptions = keyof typeof COLOR_OPTIONS;
 const enum DEFAULT_THEME {
   dark_gray = "#4f4f4f",
   light_gray = "#dbd8d8",
+  medium_gray = "#8E8E8E",
   white = "#ffffff",
   blue = "#245AB7",
   red = "#CF2121",
@@ -35,7 +36,10 @@ export const DefaultAppTheme = {
   button_dark_label: DEFAULT_THEME.white,
   //
   bg_white: DEFAULT_THEME.white,
+  bg_light_gray: DEFAULT_THEME.light_gray,
+  bg_medium_gray: DEFAULT_THEME.medium_gray,
   //
   border_dark_gray: DEFAULT_THEME.dark_gray,
   border_light_gray: DEFAULT_THEME.light_gray,
+  border_medium_gray: DEFAULT_THEME.medium_gray,
 };

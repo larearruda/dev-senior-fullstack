@@ -10,6 +10,7 @@ export const TextBox = styled.TextInput`
   padding: 10px;
   border-color: ${DefaultAppTheme.border_light_gray};
   border-radius: 5px;
+  background-color: ${DefaultAppTheme.bg_white};
 `;
 
 export const TextBoxLabel = styled.Text`
