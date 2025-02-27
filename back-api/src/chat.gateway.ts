@@ -22,6 +22,8 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
   @SubscribeMessage('sendMessage')
   handleMessage(client: Socket, payload: { message: string; room: string }) {
+    // console.log('client', client);
+    console.log('payload', payload);
     console.log(
       `Mensagem recebida na sala ${payload.room}: ${payload.message}`,
     );
@@ -29,8 +31,8 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
   }
 
   @SubscribeMessage('joinRoom')
-  handleJoinRoom(client: Socket, room: string) {
-    client.join(room);
+  async handleJoinRoom(client: Socket, room: string) {
+    await client.join(room);
     client.emit('joinedRoom', room);
   }
 }
