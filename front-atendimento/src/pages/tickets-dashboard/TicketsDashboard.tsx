@@ -13,8 +13,7 @@ import { getAllTickets, Ticket } from "../../services/Ticket.service";
 import InfoCard from "../../components/info-card/InfoCard";
 import SideMenu from "../../components/side-menu/SideMenu";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMessage } from "@fortawesome/free-solid-svg-icons";
+import MessageIcon from "@mui/icons-material/Message";
 
 const TicketsDashboard: React.FC = () => {
   const [tickets, setTickets] = useState([]);
@@ -69,10 +68,7 @@ const TicketsDashboard: React.FC = () => {
               <TableCell> {ticket.title} </TableCell>
               <TableCell>
                 {" "}
-                <FontAwesomeIcon
-                  icon={faMessage}
-                  onClick={() => openChat(ticket)}
-                />
+                <MessageIcon onClick={() => openChat(ticket)} />
               </TableCell>
             </TableRow>
           ))}
