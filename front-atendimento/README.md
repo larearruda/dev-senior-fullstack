@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Frontend Central de Atendimento
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Design System: [Material Ui](https://mui.com/material-ui/all-components/)
 
 ## Available Scripts
 

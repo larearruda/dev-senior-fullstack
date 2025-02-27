@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from "react";
 import {
-  disconnectSocket,
+  ChatMessage,
+  // disconnectSocket,
   joinRoom,
   listenForMessages,
   sendMessage,
 } from "../../services/Socket.service";
+import { Button, TextField } from "@mui/material";
 
 export default function Chat() {
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState<string[]>([]);
+  const [conversations, setConversation] = useState<ChatMessage[]>([]);
 
   useEffect(() => {
+    // console.log("entrando na sala");
     joinRoom("room-1");
 
     listenForMessages((msg) => {
-      console.log("chegou mensagem nova");
-      setMessages((prev) => [...prev, msg]);
+      console.log("nova mensagem recebida na conversa", msg);
+      var chatMsg = JSON.parse(msg);
+      setConversation((prev) => [...prev, chatMsg]);
     });
 
-    return () => {
-      disconnectSocket();
-    };
+    // return () => {
+    //   disconnectSocket();
+    // };
   }, []);
 
   const handleSend = () => {
@@ -30,15 +34,27 @@ export default function Chat() {
 
   return (
     <div>
-      {messages.map((msg, index) => (
-        <div key={index}>{msg}</div>
+      {conversations.map((msg, index) => (
+        <div key={index}>{msg.message}</div>
       ))}
-      <input
+
+      <TextField
+        label="Digite sua mensagem"
+        fullWidth
+        margin="normal"
+        required
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder="Digite sua mensagem"
       />
-      <button onClick={handleSend}>Enviar</button>
+      <Button
+        variant="contained"
+        color="primary"
+        fullWidth
+        sx={{ marginTop: 2 }}
+        onClick={handleSend}
+      >
+        Enviar
+      </Button>
     </div>
   );
 }
