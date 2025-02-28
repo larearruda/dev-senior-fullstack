@@ -1,6 +1,26 @@
 import React, { useState } from "react";
-import { TextField, Button, Typography, Box } from "@mui/material";
+import { TextField, Button, Typography, Box, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { styled } from "@mui/material/styles";
+import MuiCard from "@mui/material/Card";
+
+// import { MultilineChartRounded } from "@mui/icons-material";
+
+const Card = styled(MuiCard)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  maxWidth: "500px",
+  boxShadow:
+    "hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px",
+  padding: theme.spacing(4), //nao entendi ainda como q esse theme trabalha
+  margin: "auto", // está centralizando o elemento automaticamente
+  // alignSelf: "center",
+  // justifyContent: "center",
+}));
+
+const SignInContainer = styled(Stack)(({ theme }) => ({
+  // height: "80%",
+}));
 
 interface LoginProps {
   onLogin: () => void;
@@ -17,59 +37,56 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     console.log("Password:", password);
     onLogin();
     navigate("/dashboard");
-    // Aqui você pode adicionar a lógica de autenticação, como chamadas API, etc.
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: 2,
-        border: "1px solid #ddd",
-        borderRadius: 1,
-        boxShadow: 3,
-        justifyContent: "center",
-        position: "absolute", // Usa position absoluta para centralizar
-        top: "50%", // Posiciona no meio da tela
-        left: "50%", // Posiciona no meio da tela
-        transform: "translate(-50%, -50%)", // Ajusta para garantir que a caixa esteja perfeitamente centralizada
-      }}
-    >
-      <Typography variant="h5" gutterBottom>
-        Login
-      </Typography>
-      <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-        <TextField
-          label="Email"
-          type="email"
-          fullWidth
-          margin="normal"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <TextField
-          label="Password"
-          type="password"
-          fullWidth
-          margin="normal"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          fullWidth
-          sx={{ marginTop: 2 }}
+    <Card variant="outlined">
+      <SignInContainer direction="column" justifyContent="space-between">
+        <Typography variant="h5" gutterBottom>
+          Login
+        </Typography>
+        <Box
+          component="form"
+          onSubmit={handleSubmit}
+          noValidate
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            gap: 2,
+          }}
         >
-          Acessar
-        </Button>
-      </form>
-    </Box>
+          <TextField
+            label="Email"
+            type="email"
+            fullWidth
+            margin="normal"
+            required
+            autoFocus
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            label="Password"
+            type="password"
+            fullWidth
+            margin="normal"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: 2 }}
+          >
+            Acessar
+          </Button>
+        </Box>
+      </SignInContainer>
+    </Card>
   );
 };
 
