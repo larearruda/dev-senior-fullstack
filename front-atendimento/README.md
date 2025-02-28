@@ -2,6 +2,21 @@
 
 Design System: [Material Ui](https://mui.com/material-ui/all-components/)
 
+Template que estou usando para estudar e replicar neste projeto:
+
+- [Dashboard](https://mui.com/material-ui/getting-started/templates/dashboard/)
+- [Sign In](https://mui.com/material-ui/getting-started/templates/sign-in/)
+
+Clonei a pasta geral de [templates free do Material UI](https://mui.com/material-ui/getting-started/templates/) numa pasta chamada templates-material-ui/d
+
+```sh
+# dashboard
+code ~/Documents/dev/larissa/templates-material-ui/docs/data/material/getting-started/templates/dashboard
+
+# tela de login
+code ~/Documents/dev/larissa/templates-material-ui/docs/data/material/getting-started/templates/sign-in
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
