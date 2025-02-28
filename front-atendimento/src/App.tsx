@@ -10,21 +10,30 @@ import Chat from "./pages/chat/Chat";
 import { useState } from "react";
 import SideMenu from "./components/side-menu/SideMenu";
 import Dashboard from "./pages/dashboard/Dashboard";
+import { Box } from "@mui/material";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
     <Router>
       {isAuthenticated ? (
-        <div className="flex h-screen">
+        <Box sx={{ display: "flex" }}>
           <SideMenu />
-          <div className="flex-1 p-6">
+          {/* <Navbar /> - ainda nao criei esse componente */}
+          <Box
+            component="main"
+            sx={() => ({
+              flexGrow: 1,
+              backgroundColor: "red",
+              overflow: "auto",
+            })}
+          >
             <Routes>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/chat" element={<Chat />} />
             </Routes>
-          </div>
-        </div>
+          </Box>
+        </Box>
       ) : (
         <Routes>
           <Route
