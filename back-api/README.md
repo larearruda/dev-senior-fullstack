@@ -1,54 +1,58 @@
 # Backend API Central de Atendimento
-## Description
-Projeto backend de uma central de atendimento de hotel
 
+## Description
+
+Projeto backend de uma central de atendimento de hotel
 
 ## Project setup
 
 ```bash
 $ yarn install
 ```
+
 ## API
+
 ## 📌 Endpoints da API
 
 ### 🎫 Tickets
-| Método  | Rota                 | Descrição                                      |
-|---------|----------------------|----------------------------------------------|
-| GET     | `/tickets`           | Obtém todos os tickets                      |
-| GET     | `/tickets/:id`       | Obtém um ticket específico pelo ID          |
-| GET     | `/tickets?status=aberto` | Filtra tickets por status                  |
-| POST    | `/tickets`           | Cria um novo ticket                         |
-| PUT     | `/tickets/:id`       | Atualiza um ticket pelo ID                  |
-| DELETE  | `/tickets/:id`       | Remove um ticket pelo ID                    |
+
+| Método | Rota                     | Descrição                          |
+| ------ | ------------------------ | ---------------------------------- |
+| GET    | `/tickets`               | Obtém todos os tickets             |
+| GET    | `/tickets/:id`           | Obtém um ticket específico pelo ID |
+| GET    | `/tickets?status=aberto` | Filtra tickets por status          |
+| POST   | `/tickets`               | Cria um novo ticket                |
+| PUT    | `/tickets/:id`           | Atualiza um ticket pelo ID         |
+| DELETE | `/tickets/:id`           | Remove um ticket pelo ID           |
 
 ### 🏨 Reservas
-| Método  | Rota                 | Descrição                                      |
-|---------|----------------------|----------------------------------------------|
-| GET     | `/bookings`      | Obtém todas as reservas                     |
-| GET     | `/bookings/:id`  | Obtém uma reserva específica pelo ID        |
-| POST    | `/bookings`      | Cria uma nova reserva                       |
-| PUT     | `/bookings/:id`  | Atualiza uma reserva pelo ID                |
-| DELETE  | `/bookings/:id`  | Remove uma reserva pelo ID                  |
+
+| Método | Rota            | Descrição                            |
+| ------ | --------------- | ------------------------------------ |
+| GET    | `/bookings`     | Obtém todas as reservas              |
+| GET    | `/bookings/:id` | Obtém uma reserva específica pelo ID |
+| POST   | `/bookings`     | Cria uma nova reserva                |
+| PUT    | `/bookings/:id` | Atualiza uma reserva pelo ID         |
+| DELETE | `/bookings/:id` | Remove uma reserva pelo ID           |
 
 ### 🧑‍💼 Usuários
-| Método  | Rota                 | Descrição                                      |
-|---------|----------------------|----------------------------------------------|
-| GET     | `/users`             | Obtém todos os usuários                     |
-| GET     | `/users/:id`         | Obtém um usuário específico pelo ID         |
-| POST    | `/users`             | Cria um novo usuário                        |
-| PUT     | `/users/:id`         | Atualiza um usuário pelo ID                 |
-| DELETE  | `/users/:id`         | Remove um usuário pelo ID                   |
+
+| Método | Rota         | Descrição                           |
+| ------ | ------------ | ----------------------------------- |
+| GET    | `/users`     | Obtém todos os usuários             |
+| GET    | `/users/:id` | Obtém um usuário específico pelo ID |
+| POST   | `/users`     | Cria um novo usuário                |
+| PUT    | `/users/:id` | Atualiza um usuário pelo ID         |
+| DELETE | `/users/:id` | Remove um usuário pelo ID           |
 
 ---
 
-
-
-
 ## Banco de dados
+
 SQLite
 
 ```shell
-# acessar o banco 
+# acessar o banco
 sqlite3 database.sqlite
 # se vir a mensagem abaixo, deu certo
 SQLite version 3.43.2 2023-10-10 13:08:14
@@ -56,34 +60,35 @@ Enter ".help" for usage hints.
 sqlite>
 
 
-# Lista todas as tabelas  
-.tables   
+# Lista todas as tabelas
+.tables
 
-# Mostra a estrutura da tabela  
+# Mostra a estrutura da tabela
 .schema nome_da_tabela
 
-# Visualiza os registros  
+# Visualiza os registros
 SELECT * FROM nome_da_tabela;
-``` 
+```
 
 ## Conceitos NestJs
 
 ```shell
-# criar novo modulo 
-nest g mo
+# criar novo modulo
+nest g mo  <nome_do_modulo>
 
-# criar novo controler 
-nest g co
+# criar novo controler
+nest g co  <nome_do_controller>
 
 # criar novo service
-nest g s
+nest g s  <nome_do_service>
 
 # criar um novo resource
-nest g resource
+nest g resource <nome_do_resource>
 
 ```
 
-### DTO - Data Transfer Object 
+### DTO - Data Transfer Object
+
 DTO (Data Transfer Object) é um objeto usado para transferir dados entre diferentes camadas de uma aplicação. No NestJS, ele é utilizado principalmente para validar e estruturar os dados recebidos em um endpoint antes que sejam processados.
 🎯 Por que usar DTOs?
 
