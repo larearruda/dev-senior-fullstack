@@ -5,6 +5,8 @@ import { DataSource } from 'typeorm';
 import { BookingsModule } from './bookings/bookings.module';
 import { TicketsModule } from './tickets/tickets.module';
 import { ChatGateway } from './chat.gateway';
+import { CustomersModule } from './customers/customers.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { ChatGateway } from './chat.gateway';
     HealthModule,
     BookingsModule,
     TicketsModule,
+    CustomersModule,
+    UsersModule,
   ],
   providers: [ChatGateway],
 })
