@@ -9,11 +9,14 @@ import {
   Stack,
   styled,
 } from "@mui/material";
+import { useLocation, useNavigate } from "react-router-dom";
+import MuiDrawer, { drawerClasses } from "@mui/material/Drawer";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PeopleIcon from "@mui/icons-material/People";
 import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket";
-import { useNavigate } from "react-router-dom";
-import MuiDrawer, { drawerClasses } from "@mui/material/Drawer";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { useDispatch } from "react-redux";
+import { logoutAction } from "../../store/auth";
 
 const drawerWidth = 240;
 
@@ -30,15 +33,27 @@ const CustomDrawer = styled(MuiDrawer)({
 
 const SideMenu: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const location = useLocation();
+
   const mainListItems = [
-    { text: "Dashboard", icon: <DashboardIcon />, path: "/dashboard" },
-    { text: "Clientes", icon: <PeopleIcon />, path: "/clients" },
-    { text: "Reservas", icon: <AirplaneTicketIcon />, path: "/bookings" },
+    { id: 1, text: "Dashboard", icon: <DashboardIcon />, path: "/dashboard" },
+    {
+      id: 2,
+      text: "Reservas",
+      icon: <AirplaneTicketIcon />,
+      path: "/bookings",
+    },
+    { id: 3, text: "Clientes", icon: <PeopleIcon />, path: "/customers" },
+    { id: 4, text: "Logout", icon: <LogoutIcon />, path: "/login" },
   ];
 
   const handleClick = (path: any) => {
     console.log("clicou no item", path);
-    navigate("/dashboard");
+    if (path === "/login") {
+      dispatch(logoutAction());
+    }
+    navigate(path);
   };
   return (
     <CustomDrawer
@@ -62,10 +77,10 @@ const SideMenu: React.FC = () => {
       >
         <Stack sx={{ flexGrow: 1, p: 1, justifyContent: "space-between" }}>
           <List dense>
-            {mainListItems.map((item, index) => (
-              <ListItem key={index} disablePadding sx={{ display: "block" }}>
+            {mainListItems.map((item) => (
+              <ListItem key={item.id} disablePadding sx={{ display: "block" }}>
                 <ListItemButton
-                  selected={index === 0}
+                  selected={location.pathname === item.path}
                   onClick={() => handleClick(item.path)}
                 >
                   <ListItemText primary={item.text} />

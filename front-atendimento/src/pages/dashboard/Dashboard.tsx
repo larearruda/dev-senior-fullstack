@@ -14,9 +14,13 @@ import { getAllTickets, Ticket } from "../../services/Ticket.service";
 import InfoCard from "../../components/info-card/InfoCard";
 import { useNavigate } from "react-router-dom";
 import MessageIcon from "@mui/icons-material/Message";
+import { useSelector } from "react-redux";
+import { StateIterface } from "../../store/store";
 
 const Dashboard: React.FC = () => {
   const [tickets, setTickets] = useState([]);
+
+  const userAuth = useSelector((state: StateIterface) => state.auth.user);
   const navigate = useNavigate();
 
   const getTickets = async () => {
@@ -39,6 +43,7 @@ const Dashboard: React.FC = () => {
   };
 
   useEffect(() => {
+    console.log("variaveis de estado:", userAuth);
     getTickets();
   }, []);
 
@@ -99,6 +104,10 @@ const Dashboard: React.FC = () => {
           subtitle="esta semana"
           color="warning"
         />
+      </Box>
+      <Box sx={{ display: "flex" }}>
+        {/* nao tá exibindo o navbar, sei lá pq */}
+        {/* <NavBar />  */}
       </Box>
       <Box sx={{ display: "flex" }}>{allTicketsTable}</Box>
     </React.Fragment>

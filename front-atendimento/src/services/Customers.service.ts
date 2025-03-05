@@ -1,15 +1,12 @@
 import { ApiHttp } from "./Api.service";
 
-export interface Ticket {
+export interface Customer {
   id: number;
-  bookingCode: string;
-  title: string;
-  status: string;
 }
 
-export const getAllTickets = async (): Promise<any> => {
+export const getAllCustomers = async (): Promise<any> => {
   try {
-    const response = await ApiHttp.get("tickets");
+    const response = await ApiHttp.get("customers");
     return { success: true, response: response.data };
   } catch (error) {
     console.log(error);

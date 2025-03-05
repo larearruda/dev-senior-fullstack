@@ -6,7 +6,8 @@ import {
   listenForMessages,
   sendMessage,
 } from "../../services/Socket.service";
-import { Button, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
+import NavBar from "../../components/nav-bar/NavBar";
 
 export default function Chat() {
   const [message, setMessage] = useState("");
@@ -33,28 +34,33 @@ export default function Chat() {
   };
 
   return (
-    <div>
-      {conversations.map((msg, index) => (
-        <div key={index}>{msg.message}</div>
-      ))}
+    <React.Fragment>
+      <Box>
+        <div>Teste </div>
+        {/* nao tá exibindo o navbar, sei lá pq */}
+        {/* <NavBar />  */}
+        {conversations.map((msg, index) => (
+          <div key={index}>{msg.message}</div>
+        ))}
 
-      <TextField
-        label="Digite sua mensagem"
-        fullWidth
-        margin="normal"
-        required
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      />
-      <Button
-        variant="contained"
-        color="primary"
-        fullWidth
-        sx={{ marginTop: 2 }}
-        onClick={handleSend}
-      >
-        Enviar
-      </Button>
-    </div>
+        <TextField
+          label="Digite sua mensagem"
+          fullWidth
+          margin="normal"
+          required
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          sx={{ marginTop: 2 }}
+          onClick={handleSend}
+        >
+          Enviar
+        </Button>
+      </Box>
+    </React.Fragment>
   );
 }
