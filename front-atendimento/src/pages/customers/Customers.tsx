@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Customer, getAllCustomers } from "../../services/Customers.service";
+import { getAllCustomers } from "../../services/Customers.service";
 
 const Customers: React.FC = () => {
   const [customers, setCustomers] = useState([]);
