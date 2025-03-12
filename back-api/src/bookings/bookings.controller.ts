@@ -20,6 +20,11 @@ export class BookingsController {
     return this.bookingsService.create(createBookingDto);
   }
 
+  @Post('/bulk')
+  createBulk(@Body() createBookingDtos: CreateBookingDto[]) {
+    return this.bookingsService.createBulk(createBookingDtos);
+  }
+
   @Get()
   findAll() {
     return this.bookingsService.findAll();

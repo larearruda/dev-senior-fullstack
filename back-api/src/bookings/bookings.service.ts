@@ -16,6 +16,14 @@ export class BookingsService {
     return await this.bookingsRepository.save(newBooking);
   }
 
+  async createBulk(createBookingDtos: CreateBookingDto[]): Promise<Booking[]> {
+    const bookings: Booking[] = createBookingDtos.map((dto) => {
+      return this.bookingsRepository.create(dto as unknown as Partial<Booking>);
+    });
+
+    return await this.bookingsRepository.save(bookings);
+  }
+
   findAll() {
     const bookings = this.bookingsRepository.find();
     return bookings;
