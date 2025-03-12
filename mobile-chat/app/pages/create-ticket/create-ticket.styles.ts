@@ -14,3 +14,7 @@ export const FormView = styled.View`
   border-color: ${DefaultAppTheme.border_light_gray};
   background-color: ${DefaultAppTheme.bg_white};
 `;
+
+export const FormItem = styled.View`
+  margin-bottom: 10px;
+`;
