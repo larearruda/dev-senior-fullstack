@@ -6,6 +6,7 @@
 - [ ] Parametrizar variáveis de ambiente (com .env por ex) e esconder URLs e IPs do código
 - [ ] Implementar redux
 - [ ] JWT para autenticar a conexão WebSocket
+- [ ] Implementar OAuth
 
 ### Tarefas por componente
 
@@ -36,3 +37,5 @@
 ## Back-api
 
 - [ ] JWT para autenticar a conexão WebSocket
+- [ ] Criptografia na senha do usuário
+- [ ] ao criar reserva, o bookingCode tem que ser único
