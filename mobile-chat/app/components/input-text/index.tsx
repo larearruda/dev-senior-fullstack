@@ -5,21 +5,19 @@ interface InputButtonProps {
   value: string;
   onChangeInputText: (text: string) => void;
   placeholder?: string;
-  hasLabelOverIt?: boolean;
-  labelOverIt?: string;
+  label?: string;
 }
 
 export default function InputText({
   value,
   placeholder,
-  hasLabelOverIt = false,
-  labelOverIt,
+  label,
   onChangeInputText,
 }: InputButtonProps) {
   const [textValue, setTextValue] = useState("");
   return (
     <TextView>
-      {hasLabelOverIt && <TextBoxLabel>{labelOverIt} </TextBoxLabel>}
+      {label && <TextBoxLabel>{label} </TextBoxLabel>}
       <TextBox
         value={value}
         placeholder={placeholder}
