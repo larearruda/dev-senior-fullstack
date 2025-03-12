@@ -9,4 +9,7 @@ export class User {
 
   @Column()
   uuid: string;
+
+  @Column()
+  password: string;
 }
