@@ -8,6 +8,9 @@ export class Ticket {
   bookingCode: string;
 
   @Column()
+  hotelId: string;
+
+  @Column()
   status: string;
 
   @Column()

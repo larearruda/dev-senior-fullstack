@@ -1,0 +1,26 @@
+[
+  {
+    "bookingCode": "20250307-ABCDEF",
+    "customerId": 1,
+    "hotelId": 2,
+    "checkInDate": "2025-03-10",
+    "checkOutDate": "2025-03-15",
+    "status": "confirmed"
+  },
+  {
+    "bookingCode": "20250307-GHIJKL",
+    "customerId": 1,
+    "hotelId": 3,
+    "checkInDate": "2025-04-01",
+    "checkOutDate": "2025-04-05",
+    "status": "pending"
+  },
+  {
+    "bookingCode": "20250307-MNOPQR",
+    "customerId": 1,
+    "hotelId": 1,
+    "checkInDate": "2025-05-20",
+    "checkOutDate": "2025-05-25",
+    "status": "cancelled"
+  }
+]

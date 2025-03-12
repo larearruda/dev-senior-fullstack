@@ -1,0 +1,82 @@
+[
+  {
+    "bookingCode": "20250307-ABCDXY",
+    "customerId": 3,
+    "hotelId": 1,
+    "checkInDate": "2025-03-10",
+    "checkOutDate": "2025-03-15",
+    "status": "confirmed"
+  },
+  {
+    "bookingCode": "20250307-WERTHU",
+    "customerId": 7,
+    "hotelId": 2,
+    "checkInDate": "2025-04-01",
+    "checkOutDate": "2025-04-05",
+    "status": "pending"
+  },
+  {
+    "bookingCode": "20250307-QWERTY",
+    "customerId": 1,
+    "hotelId": 3,
+    "checkInDate": "2025-05-12",
+    "checkOutDate": "2025-05-17",
+    "status": "cancelled"
+  },
+  {
+    "bookingCode": "20250307-ASDFGH",
+    "customerId": 2,
+    "hotelId": 4,
+    "checkInDate": "2025-06-20",
+    "checkOutDate": "2025-06-25",
+    "status": "confirmed"
+  },
+  {
+    "bookingCode": "20250307-ZXCVBN",
+    "customerId": 5,
+    "hotelId": 5,
+    "checkInDate": "2025-07-10",
+    "checkOutDate": "2025-07-15",
+    "status": "pending"
+  },
+  {
+    "bookingCode": "20250307-PLMKJN",
+    "customerId": 9,
+    "hotelId": 1,
+    "checkInDate": "2025-08-01",
+    "checkOutDate": "2025-08-05",
+    "status": "confirmed"
+  },
+  {
+    "bookingCode": "20250307-OIUYTRE",
+    "customerId": 6,
+    "hotelId": 2,
+    "checkInDate": "2025-09-12",
+    "checkOutDate": "2025-09-17",
+    "status": "cancelled"
+  },
+  {
+    "bookingCode": "20250307-LKJHGF",
+    "customerId": 4,
+    "hotelId": 3,
+    "checkInDate": "2025-10-20",
+    "checkOutDate": "2025-10-25",
+    "status": "confirmed"
+  },
+  {
+    "bookingCode": "20250307-MNBVCX",
+    "customerId": 8,
+    "hotelId": 4,
+    "checkInDate": "2025-11-10",
+    "checkOutDate": "2025-11-15",
+    "status": "pending"
+  },
+  {
+    "bookingCode": "20250307-POIUYT",
+    "customerId": 10,
+    "hotelId": 5,
+    "checkInDate": "2025-12-01",
+    "checkOutDate": "2025-12-05",
+    "status": "confirmed"
+  }
+]
