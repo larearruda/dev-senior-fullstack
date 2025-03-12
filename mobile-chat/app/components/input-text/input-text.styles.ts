@@ -5,7 +5,7 @@ export const TextView = styled.View``;
 
 export const TextBox = styled.TextInput`
   height: 40px;
-  margin: 12px;
+  margin: 2px;
   border-width: 1px;
   padding: 10px;
   border-color: ${DefaultAppTheme.border_light_gray};
@@ -14,5 +14,6 @@ export const TextBox = styled.TextInput`
 `;
 
 export const TextBoxLabel = styled.Text`
-  padding: 10px;
+  padding: 2px;
+  /* margin-top: 20px; */
 `;
