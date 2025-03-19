@@ -1,5 +1,9 @@
 # Anotações - solução
 
+### Configuração completa
+- Node LTS
+- Install yarn `npm install --global yarn`
+
 ### Frontend React - front-atendimento
 
 [Frontend Atendimento ao Usuário](./front-atendimento/README.md)
