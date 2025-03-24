@@ -1,0 +1,57 @@
+[
+    {
+      "name": "Hotel Mar Azul",
+      "address": "Av. Atlântica, 123",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "country": "Brasil",
+      "postalCode": "22021-001",
+      "phone": "+55 21 98765-4321",
+      "pricePerNight": 350.00,
+      "isActive": true
+    },
+    {
+      "name": "Hotel Mont Blanc",
+      "address": "Rue de la Montagne, 45",
+      "city": "Chamonix",
+      "state": "Rhône-Alpes",
+      "country": "França",
+      "postalCode": "74400",
+      "phone": "+33 4 50 53 00 00",
+      "pricePerNight": 500.00,
+      "isActive": true
+    },
+    {
+      "name": "Hotel Aurora Boreal",
+      "address": "Storgata 5",
+      "city": "Tromsø",
+      "state": "Troms og Finnmark",
+      "country": "Noruega",
+      "postalCode": "9008",
+      "phone": "+47 77 60 00 00",
+      "pricePerNight": 700.00,
+      "isActive": true
+    },
+    {
+      "name": "Hotel Safari Serengeti",
+      "address": "Serengeti National Park",
+      "city": "Arusha",
+      "state": "Arusha",
+      "country": "Tanzânia",
+      "postalCode": "00000",
+      "phone": "+255 27 250 3471",
+      "pricePerNight": 450.00,
+      "isActive": true
+    },
+    {
+      "name": "Hotel Central Park",
+      "address": "5th Ave, Central Park",
+      "city": "Nova York",
+      "state": "NY",
+      "country": "Estados Unidos",
+      "postalCode": "10019",
+      "phone": "+1 212-123-4567",
+      "pricePerNight": 600.00,
+      "isActive": true
+    }
+  ]

@@ -1,0 +1,103 @@
+[
+    {
+      "name": "João da Silva",
+      "email": "joao.silva@email.com",
+      "phone": "+55 11 91234-5678",
+      "document": "123.456.789-01",
+      "status": "active",
+      "loyaltyPoints": 120,
+      "preferredLanguage": "pt-BR",
+      "notes": "Prefere quartos com vista para o mar."
+    },
+    {
+      "name": "Maria Santos",
+      "email": "maria.santos@email.com",
+      "phone": "+55 21 99876-5432",
+      "document": "987.654.321-00",
+      "status": "active",
+      "loyaltyPoints": 250,
+      "preferredLanguage": "pt-BR",
+      "notes": "Cliente VIP."
+    },
+    {
+      "name": "John Doe",
+      "email": "john.doe@email.com",
+      "phone": "+1 212-555-1234",
+      "document": "A1B2C3D4",
+      "status": "active",
+      "loyaltyPoints": 80,
+      "preferredLanguage": "en-US",
+      "notes": "Prefere chá ao invés de café."
+    },
+    {
+      "name": "Camila Oliveira",
+      "email": "camila.oliveira@email.com",
+      "phone": "+55 31 90000-1234",
+      "document": "321.654.987-00",
+      "status": "inactive",
+      "loyaltyPoints": 0,
+      "preferredLanguage": "pt-BR",
+      "notes": "Cliente inativo desde 2023."
+    },
+    {
+      "name": "Anna Schmidt",
+      "email": "anna.schmidt@email.com",
+      "phone": "+49 170 1234567",
+      "document": "D123456789",
+      "status": "active",
+      "loyaltyPoints": 350,
+      "preferredLanguage": "de-DE",
+      "notes": "Viaja frequentemente para negócios."
+    },
+    {
+      "name": "Carlos Mendes",
+      "email": "carlos.mendes@email.com",
+      "phone": "+55 85 98765-4321",
+      "document": "654.321.987-00",
+      "status": "blocked",
+      "loyaltyPoints": 0,
+      "preferredLanguage": "pt-BR",
+      "notes": "Bloqueado por comportamento inadequado."
+    },
+    {
+      "name": "Emma Johnson",
+      "email": "emma.johnson@email.com",
+      "phone": "+1 415-555-9876",
+      "document": "E789654321",
+      "status": "active",
+      "loyaltyPoints": 200,
+      "preferredLanguage": "en-US",
+      "notes": "Prefere quarto próximo ao elevador."
+    },
+    {
+      "name": "Diego Martinez",
+      "email": "diego.martinez@email.com",
+      "phone": "+34 600 123 456",
+      "document": "X654321987",
+      "status": "active",
+      "loyaltyPoints": 150,
+      "preferredLanguage": "es-ES",
+      "notes": "Cliente fiel há 5 anos."
+    },
+    {
+      "name": "Yuki Tanaka",
+      "email": "yuki.tanaka@email.com",
+      "phone": "+81 90-1234-5678",
+      "document": "T987654321",
+      "status": "active",
+      "loyaltyPoints": 90,
+      "preferredLanguage": "ja-JP",
+      "notes": "Solicita sempre travesseiros extras."
+    },
+    {
+      "name": "Sophie Dupont",
+      "email": "sophie.dupont@email.com",
+      "phone": "+33 6 12 34 56 78",
+      "document": "F987654321",
+      "status": "active",
+      "loyaltyPoints": 300,
+      "preferredLanguage": "fr-FR",
+      "notes": "Prefere andar superior."
+    }
+  ]
+  
