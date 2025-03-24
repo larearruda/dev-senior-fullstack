@@ -12,20 +12,26 @@ import NavBar from "../../components/nav-bar/NavBar";
 export default function Chat() {
   const [message, setMessage] = useState("");
   const [conversations, setConversation] = useState<ChatMessage[]>([]);
+  const isLiveChatEnabled =  useState(false);
+
 
   useEffect(() => {
-    // console.log("entrando na sala");
-    joinRoom("room-1");
 
-    listenForMessages((msg) => {
-      console.log("nova mensagem recebida na conversa", msg);
-      var chatMsg = JSON.parse(msg);
-      setConversation((prev) => [...prev, chatMsg]);
-    });
+    if(isLiveChatEnabled){
 
-    // return () => {
-    //   disconnectSocket();
-    // };
+      // console.log("entrando na sala");
+      joinRoom("room-1");
+  
+      listenForMessages((msg) => {
+        console.log("nova mensagem recebida na conversa", msg);
+        var chatMsg = JSON.parse(msg);
+        setConversation((prev) => [...prev, chatMsg]);
+      });
+  
+      // return () => {
+      //   disconnectSocket();
+      // };
+    }
   }, []);
 
   const handleSend = () => {
