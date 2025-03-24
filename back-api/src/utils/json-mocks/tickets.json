@@ -1,0 +1,93 @@
+[
+    {
+      "bookingCode": "20250410-BRASIL",
+      "hotelId": 1,
+      "status": "open",
+      "title": "Ar-condicionado não está funcionando",
+      "description": "O hóspede relatou que o ar-condicionado do quarto está desligado e não responde aos controles.",
+      "priority": "high",
+      "category": "manutenção",
+      "createdBy": "João da Silva",
+      "assignedTo": "Técnico de Manutenção"
+    },
+    {
+      "bookingCode": "20250601-CHAMON",
+      "hotelId": 2,
+      "status": "open",
+      "title": "Pedido especial de travesseiros extras",
+      "description": "O hóspede solicitou 3 travesseiros extras para o quarto.",
+      "priority": "low",
+      "category": "serviço de quarto",
+      "createdBy": "Maria Santos",
+      "assignedTo": "Equipe de Governança"
+    },
+    {
+      "bookingCode": "20250510-TROMSO",
+      "hotelId": 3,
+      "status": "closed",
+      "title": "Wi-Fi não funciona no quarto",
+      "description": "Cliente reportou que a conexão Wi-Fi está muito lenta e instável.",
+      "priority": "medium",
+      "category": "tecnologia",
+      "createdBy": "John Doe",
+      "assignedTo": "Suporte Técnico",
+      "closedAt": "2025-05-12"
+    },
+    {
+      "bookingCode": "20250320-ARUSHA",
+      "hotelId": 4,
+      "status": "open",
+      "title": "Roupa de cama suja",
+      "description": "O hóspede encontrou manchas nos lençóis e solicitou uma troca imediata.",
+      "priority": "urgent",
+      "category": "limpeza",
+      "createdBy": "Camila Oliveira",
+      "assignedTo": "Equipe de Governança"
+    },
+    {
+      "bookingCode": "20250701-CENTRA",
+      "hotelId": 5,
+      "status": "closed",
+      "title": "Chuveiro com vazamento",
+      "description": "Cliente reportou que o chuveiro está pingando durante a noite, causando desconforto.",
+      "priority": "medium",
+      "category": "manutenção",
+      "createdBy": "Sophie Dupont",
+      "assignedTo": "Equipe de Manutenção",
+      "closedAt": "2025-07-03"
+    },
+    {
+      "bookingCode": "20250810-SAFARI",
+      "hotelId": 4,
+      "status": "open",
+      "title": "Reserva de safari não confirmada",
+      "description": "O cliente reservou um safari junto à hospedagem, mas não recebeu a confirmação da atividade.",
+      "priority": "medium",
+      "category": "atendimento",
+      "createdBy": "Diego Martinez",
+      "assignedTo": "Recepção"
+    },
+    {
+      "bookingCode": "20250910-ARUSHA",
+      "hotelId": 4,
+      "status": "open",
+      "title": "Problema com o cofre do quarto",
+      "description": "O hóspede não consegue acessar o cofre eletrônico do quarto.",
+      "priority": "high",
+      "category": "tecnologia",
+      "createdBy": "Anna Schmidt",
+      "assignedTo": "Equipe Técnica"
+    },
+    {
+      "bookingCode": "20250401-CHAMON",
+      "hotelId": 2,
+      "status": "closed",
+      "title": "Chave eletrônica não funciona",
+      "description": "O cartão de acesso ao quarto está desmagnetizado.",
+      "priority": "medium",
+      "category": "tecnologia",
+      "createdBy": "Carlos Mendes",
+      "assignedTo": "Recepção",
+      "closedAt": "2025-04-01"
+    }
+  ]
