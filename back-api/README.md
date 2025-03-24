@@ -27,13 +27,14 @@ $ yarn install
 
 ### 🏨 Reservas
 
-| Método | Rota            | Descrição                            |
-| ------ | --------------- | ------------------------------------ |
-| GET    | `/bookings`     | Obtém todas as reservas              |
-| GET    | `/bookings/:id` | Obtém uma reserva específica pelo ID |
-| POST   | `/bookings`     | Cria uma nova reserva                |
-| PUT    | `/bookings/:id` | Atualiza uma reserva pelo ID         |
-| DELETE | `/bookings/:id` | Remove uma reserva pelo ID           |
+| Método | Rota            | Descrição                                  |
+| ------ | --------------- | ------------------------------------       |
+| GET    | `/bookings`     | Obtém todas as reservas                    |
+| GET    | `/bookings/:id` | Obtém uma reserva específica pelo ID       |
+| POST   | `/bookings`     | Cria uma nova reserva                      |
+| PUT    | `/bookings/:id` | Atualiza uma reserva pelo ID               |
+| DELETE | `/bookings/:id` | Remove uma reserva pelo ID                 |
+| POST   | `/bookings/bulk`| Adiciona registros de reservas em massa    |
 
 ### 🧑‍💼 Usuários
 
