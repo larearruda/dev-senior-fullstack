@@ -11,6 +11,10 @@ export class CustomersController {
   create(@Body() createCustomerDto: CreateCustomerDto) {
     return this.customersService.create(createCustomerDto);
   }
+  @Post('/bulk')
+  createBulk(@Body() createCustomerDtos: CreateCustomerDto[]){
+    return this.customersService.createBulk(createCustomerDtos)
+  }
 
   @Get()
   findAll() {
