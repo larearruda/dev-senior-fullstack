@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 @Entity()
 export class Booking {
   @PrimaryGeneratedColumn()
@@ -22,14 +22,10 @@ export class Booking {
   @Column()
   status: string;
 
-  /*
-	customerId (string) → ID do cliente que fez a reserva
-	hotelId (string) → ID do hotel onde a reserva foi feita
-	roomId (string) → ID do quarto reservado
-	checkInDate (Date) → Data de entrada no hotel
-	checkOutDate (Date) → Data de saída do hotel
-	status (string) → Status da reserva ("pendente", "confirmada", "cancelada", "concluída")
-	createdAt (Date) → Data e hora em que a reserva foi criada
-	updatedAt (Date) → Data da última atualização 
-	 */
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
 }
