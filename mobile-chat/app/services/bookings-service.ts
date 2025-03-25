@@ -1,12 +1,9 @@
 import axios from "axios";
 
-enum Urls {
-  //   BASE_URL_HTTP = "http://localhost:8080/",
-  BASE_URL_HTTP = "http://192.168.15.19:8080",
-}
+import { API_URL } from "@env";
 
 export const ApiHttp = axios.create({
-  baseURL: Urls.BASE_URL_HTTP,
+  baseURL: API_URL,
 });
 
 export const getBookingsByCustomerId = async (
@@ -17,7 +14,7 @@ export const getBookingsByCustomerId = async (
     const response = await ApiHttp.get("bookings/customerId/" + customerId);
     return { success: true, response: response.data };
   } catch (error) {
-    console.error("Erro:", error);
+    console.error("Erro:", JSON.stringify(error));
     return { success: false, error: error };
   }
 };

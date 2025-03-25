@@ -1,6 +1,7 @@
 import { io } from "socket.io-client";
 
-const socket = io("http://192.168.15.19:8080"); // Substituir pelo IP do backend, se estiver em rede local
+const SOCKET_URL = process.env.SOCKET_URL;
+const socket = io(SOCKET_URL); // Substituir pelo IP do backend, se estiver em rede local
 
 export interface ChatMessage {
   id: number;
