@@ -8,17 +8,20 @@ import { InjectRepository } from '@nestjs/typeorm';
 @Injectable()
 export class CustomersService {
   constructor(
-    @InjectRepository(Customer) private customerRepository: Repository<Customer>
-  ){}
-  
+    @InjectRepository(Customer)
+    private customerRepository: Repository<Customer>,
+  ) {}
+
   async create(createCustomerDto: CreateCustomerDto) {
     const newCustomer = this.customerRepository.create(createCustomerDto);
-    return await this.customerRepository.save(newCustomer)
+    return await this.customerRepository.save(newCustomer);
   }
 
-  async createBulk(createCustomerDtos: CreateCustomerDto[]){
+  async createBulk(createCustomerDtos: CreateCustomerDto[]) {
     const customers: Customer[] = createCustomerDtos.map((dto) => {
-      return this.customerRepository.create(dto as unknown as Partial<Customer>);
+      return this.customerRepository.create(
+        dto as unknown as Partial<Customer>,
+      );
     });
 
     return await this.customerRepository.save(customers);
