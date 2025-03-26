@@ -1,3 +1,4 @@
+import React from "react";
 import { StackParamList } from "@/app";
 import Header from "@/app/components/header";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -26,7 +27,7 @@ export type ChatProps = {
   navigation: StackNavigationProp<StackParamList, "Chat">;
 };
 
-export default function Chat({ navigation }: ChatProps) {
+const Chat: React.FC<ChatProps> = ({ navigation }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<string[]>([]);
   const [conversations, setConversation] = useState<ChatMessage[]>([]);
@@ -86,4 +87,6 @@ export default function Chat({ navigation }: ChatProps) {
       </SafeAreaView>
     </SafeAreaProvider>
   );
-}
+};
+
+export default Chat;

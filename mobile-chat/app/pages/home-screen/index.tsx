@@ -11,13 +11,14 @@ import { RefreshControl, ScrollView } from "react-native-gesture-handler";
 import styles from "./homescreen.styles";
 import Header from "@/app/components/header";
 import InputButton from "@/app/components/input-button";
+import CardArea from "@/app/components/card-area";
 
 // Definição do tipo para as propriedades de navegação
 export type HomeScreenProps = {
   navigation: StackNavigationProp<StackParamList, "Home">;
 };
 
-export default function HomeScreen({ navigation }: HomeScreenProps) {
+const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
   const auth = useSelector((state: ApplicationState) => state.authReducer);
   const dispatch = useDispatch();
 
@@ -36,7 +37,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
   const onRefreshBookings = useCallback(() => {
     console.log("atualizar reservas");
     setRefreshing(true);
-    getBookingsByCustomerId("1")
+    getBookingsByCustomerId("2")
       .then((updatedBookings) => {
         setRefreshing(false);
         if (updatedBookings.success) {
@@ -77,7 +78,13 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
             }
           >
             <Header headerTitle="Minhas viagens" />
-            {bookings.map((b: Booking) => (
+            {bookings.map((b: Booking, index) => (
+              <CardArea key={index}>
+                <Text> {b.bookingCode} </Text>
+              </CardArea>
+            ))}
+            {/* inicio bloco card bookings antigo */}
+            {/* {bookings.map((b: Booking) => (
               <View style={styles.bookingCard} key={b.id}>
                 <View style={styles.bookingCardInfo}>
                   <Text> {b.bookingCode} </Text>
@@ -101,10 +108,13 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
                   </View>
                 </View>
               </View>
-            ))}
+            ))} */}
+            {/* fim bloco card bookings antigo */}
           </ScrollView>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
-}
+};
+
+export default HomeScreen;

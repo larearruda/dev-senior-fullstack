@@ -13,7 +13,7 @@ type SignInProps = {
   navigation: StackNavigationProp<StackParamList, "SignIn">;
 };
 
-export default function SignIn({ navigation }: SignInProps) {
+const SignIn: React.FC<SignInProps> = ({ navigation }: SignInProps) => {
   const [email, onChangeEmail] = useState("");
   const [password, onChangePassword] = useState("");
 
@@ -57,4 +57,6 @@ export default function SignIn({ navigation }: SignInProps) {
       </SafeAreaView>
     </SafeAreaProvider>
   );
-}
+};
+
+export default SignIn;

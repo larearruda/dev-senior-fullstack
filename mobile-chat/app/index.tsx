@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import SignIn from "./pages/signin";
 import { Provider, useDispatch } from "react-redux";
@@ -18,6 +18,7 @@ export type StackParamList = {
 };
 
 const Stack = createStackNavigator();
+
 function InnerApp() {
   const dispatch = useDispatch();
 
@@ -61,10 +62,13 @@ function InnerApp() {
     // </NavigationContainer>
   );
 }
-export default function Index() {
+
+const Index: React.FC = () => {
   return (
     <Provider store={store}>
       <InnerApp />
     </Provider>
   );
-}
+};
+
+export default Index;

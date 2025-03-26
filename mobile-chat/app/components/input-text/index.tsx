@@ -8,12 +8,12 @@ interface InputButtonProps {
   label?: string;
 }
 
-export default function InputText({
+const InputText: React.FC<InputButtonProps> = ({
   value,
   placeholder,
   label,
   onChangeInputText,
-}: InputButtonProps) {
+}: InputButtonProps) => {
   const [textValue, setTextValue] = useState("");
   return (
     <TextView>
@@ -25,4 +25,6 @@ export default function InputText({
       />
     </TextView>
   );
-}
+};
+
+export default InputText;

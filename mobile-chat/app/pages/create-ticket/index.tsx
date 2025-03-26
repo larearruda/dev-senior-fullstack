@@ -8,7 +8,7 @@ import { Booking } from "@/app/model/Booking";
 import InputButton from "@/app/components/input-button";
 import { ColorOptions } from "@/app/components/theme/globals";
 import InputText from "@/app/components/input-text";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export type CreateTicketProps = {
   navigation: StackNavigationProp<StackParamList, "CreateTicket">;
@@ -19,7 +19,7 @@ export type CreateTicketProps = {
   };
 };
 
-export default function CreateTicket({ navigation, route }: CreateTicketProps) {
+const CreateTicket = ({ navigation, route }: CreateTicketProps) => {
   const booking: Booking = route.params?.booking;
 
   //Dados do ticket
@@ -69,4 +69,6 @@ export default function CreateTicket({ navigation, route }: CreateTicketProps) {
       </SafeAreaView>
     </SafeAreaProvider>
   );
-}
+};
+
+export default CreateTicket;

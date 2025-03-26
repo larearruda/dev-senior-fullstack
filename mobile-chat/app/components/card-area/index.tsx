@@ -2,7 +2,11 @@ import React from "react";
 import { Text } from "react-native";
 import { CardAreaView } from "./card-area.styles";
 
-const CardArea: React.FC = ({ children }: React.PropsWithChildren) => {
+type CardAreaProps = {
+  children: React.ReactNode;
+};
+
+const CardArea: React.FC<CardAreaProps> = ({ children }) => {
   return (
     <CardAreaView>
       <Text>{children} </Text>
