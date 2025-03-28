@@ -3,6 +3,7 @@ import {
   ColorOptions,
   DefaultAppFonts,
   DefaultAppTheme,
+  spacing,
 } from "../../theme/globals";
 
 export interface InputButtonColorProps {
@@ -10,12 +11,14 @@ export interface InputButtonColorProps {
 }
 
 export const Button = styled.TouchableOpacity<InputButtonColorProps>`
-  height: 40px;
+  padding-vertical: ${spacing(1)}px;
+  padding-horizontal: ${spacing(2)}px;
+  min-height: ${spacing(4)}px; /* evita cortar o texto */
+  margin: ${spacing(1.5)}px;
   border-width: 1px;
-  padding: 10px;
-  margin: 12px;
   border-radius: 5px;
   align-items: center;
+  justify-content: center;
   border-color: ${(props: InputButtonColorProps) => {
     switch (props.color) {
       case "default":
