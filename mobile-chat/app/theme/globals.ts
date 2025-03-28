@@ -43,3 +43,11 @@ export const DefaultAppTheme = {
   border_light_gray: DEFAULT_THEME.light_gray,
   border_medium_gray: DEFAULT_THEME.medium_gray,
 };
+
+export const DefaultAppFonts = {
+  size: {
+    regular: "16px",
+    small: "14px",
+    very_small: "12px",
+  },
+};

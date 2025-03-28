@@ -1,14 +1,14 @@
 import { StackParamList } from "@/app";
-import Header from "@/app/components/header";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { Alert, ScrollView, Text } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { ContainerView, FormItem, FormView } from "./create-ticket.styles";
 import { Booking } from "@/app/model/Booking";
-import InputButton from "@/app/components/input-button";
-import { ColorOptions } from "@/app/components/theme/globals";
-import InputText from "@/app/components/input-text";
+import InputButton from "@/app/components/input-button/InputButton";
+import { ColorOptions } from "@/app/theme/globals";
+import InputText from "@/app/components/input-text/InputText";
 import React, { useState } from "react";
+import Header from "@/app/components/header/Header";
 
 export type CreateTicketProps = {
   navigation: StackNavigationProp<StackParamList, "CreateTicket">;

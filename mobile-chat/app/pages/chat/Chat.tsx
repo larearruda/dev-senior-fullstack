@@ -1,6 +1,6 @@
 import React from "react";
 import { StackParamList } from "@/app";
-import Header from "@/app/components/header";
+import Header from "@/app/components/header/Header";
 import { StackNavigationProp } from "@react-navigation/stack";
 import {
   Button,
@@ -20,8 +20,8 @@ import {
   listenForMessages,
   sendMessage,
 } from "@/app/services/socket-service";
-import InputText from "@/app/components/input-text";
-import InputButton from "@/app/components/input-button";
+import InputText from "@/app/components/input-text/InputText";
+import InputButton from "@/app/components/input-button/InputButton";
 
 export type ChatProps = {
   navigation: StackNavigationProp<StackParamList, "Chat">;

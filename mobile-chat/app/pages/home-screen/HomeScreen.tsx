@@ -8,10 +8,10 @@ import { useCallback, useEffect, useState } from "react";
 import { Booking } from "@/app/model/Booking";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { RefreshControl, ScrollView } from "react-native-gesture-handler";
-import styles from "./homescreen.styles";
-import Header from "@/app/components/header";
-import InputButton from "@/app/components/input-button";
-import CardArea from "@/app/components/card-area";
+import InputButton from "@/app/components/input-button/InputButton";
+import CardArea from "@/app/components/card-area/card-area";
+import Header from "@/app/components/header/Header";
+import { Container } from "./home-screen.styles";
 
 // Definição do tipo para as propriedades de navegação
 export type HomeScreenProps = {
@@ -67,7 +67,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
     // SafeAreaProvider = exibe a tela abaixo da barra de notificaçao dos celulares
     <SafeAreaProvider>
       <SafeAreaView>
-        <View style={styles.container}>
+        <Container>
           <ScrollView
             // contentContainerStyle={styles.scrollView}
             refreshControl={
@@ -80,38 +80,22 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
             <Header headerTitle="Minhas viagens" />
             {bookings.map((b: Booking, index) => (
               <CardArea key={index}>
-                <Text> {b.bookingCode} </Text>
+                {/* header pro card  */}
+                {/* <Text> {b.bookingCode} </Text> */}
+                <InputButton
+                  color="primary"
+                  buttonLabel="Abrir solicitação"
+                  onPress={() => onPressBookingActions(b)}
+                />
+                <InputButton
+                  color="dark"
+                  buttonLabel="Falar com um atendente"
+                  onPress={() => onPressTalkWithChat(b)}
+                />
               </CardArea>
             ))}
-            {/* inicio bloco card bookings antigo */}
-            {/* {bookings.map((b: Booking) => (
-              <View style={styles.bookingCard} key={b.id}>
-                <View style={styles.bookingCardInfo}>
-                  <Text> {b.bookingCode} </Text>
-                </View>
-
-                <View style={styles.bookingCardActions}>
-                  <View style={styles.bookingCardActionLeft}>
-                    <InputButton
-                      color="primary"
-                      buttonLabel="Abrir solicitação"
-                      onPress={() => onPressBookingActions(b)}
-                    />
-                  </View>
-
-                  <View style={styles.bookingCardActionRight}>
-                    <InputButton
-                      color="dark"
-                      buttonLabel="Falar com um atendente"
-                      onPress={() => onPressTalkWithChat(b)}
-                    />
-                  </View>
-                </View>
-              </View>
-            ))} */}
-            {/* fim bloco card bookings antigo */}
           </ScrollView>
-        </View>
+        </Container>
       </SafeAreaView>
     </SafeAreaProvider>
   );

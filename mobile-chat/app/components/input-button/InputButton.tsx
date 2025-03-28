@@ -1,5 +1,5 @@
 import React from "react";
-import { ColorOptions } from "../theme/globals";
+import { ColorOptions } from "../../theme/globals";
 import { Button, ButtonLabel } from "./input-button.styles";
 
 interface InputButtonProps {

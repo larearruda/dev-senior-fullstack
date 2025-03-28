@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import SignIn from "./pages/signin";
 import { Provider, useDispatch } from "react-redux";
 import { login } from "./store/auth";
 import { store } from "./store/store";
-import HomeScreen from "./pages/home-screen";
-import CreateTicket from "./pages/create-ticket";
 import { Booking } from "./model/Booking";
-import Chat from "./pages/chat";
+import SignIn from "./pages/signin/SignIn";
+import HomeScreen from "./pages/home-screen/HomeScreen";
+import CreateTicket from "./pages/create-ticket/CreateTicket";
+import Chat from "./pages/chat/Chat";
 
 // Definindo os tipos de rotas
 export type StackParamList = {

@@ -1,5 +1,9 @@
 import styled from "styled-components/native";
-import { ColorOptions, DefaultAppTheme } from "../theme/globals";
+import {
+  ColorOptions,
+  DefaultAppFonts,
+  DefaultAppTheme,
+} from "../../theme/globals";
 
 export interface InputButtonColorProps {
   color: ColorOptions;
@@ -47,6 +51,7 @@ export const Button = styled.TouchableOpacity<InputButtonColorProps>`
 `;
 
 export const ButtonLabel = styled.Text`
+  font-size: ${DefaultAppFonts.size.regular};
   color: ${(props: InputButtonColorProps) => {
     switch (props.color) {
       case "default":

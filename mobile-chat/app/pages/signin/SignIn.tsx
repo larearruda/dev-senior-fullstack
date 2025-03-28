@@ -1,13 +1,19 @@
 import React, { useState } from "react";
+import { Text, View } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { Alert, Text, View } from "react-native";
 import { StackParamList } from "../..";
 import { useDispatch } from "react-redux";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import styles from "./signin.styles";
-import InputButton from "@/app/components/input-button";
-import InputText from "@/app/components/input-text";
+import {
+  Container,
+  LoginBox,
+  LoginTitleHeader,
+  SafeAreaBackground,
+} from "./signin.styles";
+import InputButton from "@/app/components/input-button/InputButton";
+import InputText from "@/app/components/input-text/InputText";
 import { login } from "@/app/store/auth";
+import InputCheckbox from "@/app/components/input-checkbox/InputCheckbox";
 
 type SignInProps = {
   navigation: StackNavigationProp<StackParamList, "SignIn">;
@@ -16,6 +22,7 @@ type SignInProps = {
 const SignIn: React.FC<SignInProps> = ({ navigation }: SignInProps) => {
   const [email, onChangeEmail] = useState("");
   const [password, onChangePassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -31,11 +38,10 @@ const SignIn: React.FC<SignInProps> = ({ navigation }: SignInProps) => {
   return (
     // SafeAreaProvider = exibe a tela abaixo da barra de notificaçao dos celulares
     <SafeAreaProvider>
-      <SafeAreaView style={styles.safeAreaBackground}>
-        <View style={styles.loginView}>
-          <View style={styles.loginBox}>
-            <Text style={styles.loginTitleHeader}>Login</Text>
-
+      <SafeAreaBackground>
+        <Container>
+          <LoginBox>
+            <LoginTitleHeader>Login</LoginTitleHeader>
             <InputText
               value={email}
               onChangeInputText={onChangeEmail}
@@ -51,10 +57,15 @@ const SignIn: React.FC<SignInProps> = ({ navigation }: SignInProps) => {
               onPress={handleSubmit}
               color="primary"
             />
+            <InputCheckbox
+              checked={rememberMe}
+              onChange={() => setRememberMe(!rememberMe)}
+              label="Lembrar de mim"
+            />
             <InputButton buttonLabel="Continuar com Google" color="primary" />
-          </View>
-        </View>
-      </SafeAreaView>
+          </LoginBox>
+        </Container>
+      </SafeAreaBackground>
     </SafeAreaProvider>
   );
 };
