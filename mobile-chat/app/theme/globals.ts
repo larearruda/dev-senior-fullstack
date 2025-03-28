@@ -9,6 +9,7 @@ export const COLOR_OPTIONS = {
   danger: "danger",
   dark: "dark",
 };
+
 export type ColorOptions = keyof typeof COLOR_OPTIONS;
 
 //cores do tema escolhido
