@@ -1,12 +1,11 @@
+import { DefaultAppFonts } from "@/app/theme/globals";
 import styled from "styled-components/native";
 
-export const SafeAreaBackground = styled.SafeAreaView`
-  height: 100vh;
-`;
+export const SafeAreaBackground = styled.SafeAreaView``;
 
 export const Container = styled.View`
-  justify-content: "center";
-  height: "100%";
+  justify-content: center;
+  height: 100%;
 `;
 
 export const LoginBox = styled.View`
@@ -18,7 +17,7 @@ export const LoginBox = styled.View`
 `;
 
 export const LoginTitleHeader = styled.Text`
-  font-size: 40px;
-  align-items: "center";
+  font-size: ${DefaultAppFonts.title.h3.base};
+  align-items: center;
   padding: 10px;
 `;

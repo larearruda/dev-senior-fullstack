@@ -51,7 +51,7 @@ export const Button = styled.TouchableOpacity<InputButtonColorProps>`
 `;
 
 export const ButtonLabel = styled.Text`
-  font-size: ${DefaultAppFonts.size.regular};
+  font-size: ${DefaultAppFonts.body.p.base};
   color: ${(props: InputButtonColorProps) => {
     switch (props.color) {
       case "default":

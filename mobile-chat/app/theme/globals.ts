@@ -1,3 +1,5 @@
+import { PixelRatio } from "react-native";
+
 //tipagem para usar de referencia nos outros componentes
 export const COLOR_OPTIONS = {
   default: "default",
@@ -44,10 +46,38 @@ export const DefaultAppTheme = {
   border_medium_gray: DEFAULT_THEME.medium_gray,
 };
 
+/*
+ pedi pro chat gpt me ensinar sobre padroes de tipografia e o chat trouxe que existe uma escala com Minor Third, Major Third, Perfect Fourth, Golden Ratio e eu estou considerando a escala 1.25 Major Third e tirei os tamanhos desse site https://typescale.com/
+*/
+const BASE_FONT_SIZE = 16;
+const FONT_SCALE = PixelRatio.getFontScale();
+
+export const rem = (value: number) => value * BASE_FONT_SIZE * FONT_SCALE;
+
 export const DefaultAppFonts = {
-  size: {
-    regular: "16px",
-    small: "14px",
-    very_small: "12px",
+  body: {
+    p: {
+      base: rem(1),
+    },
+  },
+  title: {
+    h6: {
+      base: rem(1.25),
+    },
+    h5: {
+      base: rem(1.563),
+    },
+    h4: {
+      base: rem(1.953),
+    },
+    h3: {
+      base: rem(2.441),
+    },
+    h2: {
+      base: rem(3.052),
+    },
+    h1: {
+      base: rem(3.815),
+    },
   },
 };

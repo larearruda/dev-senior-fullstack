@@ -9,13 +9,13 @@ export const TextBox = styled.TextInput`
   border-width: 1px;
   border-radius: 5px;
   padding: 10px;
-  font-size: ${DefaultAppFonts.size.regular};
+  font-size: ${DefaultAppFonts.body.p.base};
   border-color: ${DefaultAppTheme.border_light_gray};
   background-color: ${DefaultAppTheme.bg_white};
 `;
 
 export const TextBoxLabel = styled.Text`
   padding: 2px;
-  font-size: ${DefaultAppFonts.size.regular};
+  font-size: ${DefaultAppFonts.body.p.base};
   /* margin-top: 20px; */
 `;
