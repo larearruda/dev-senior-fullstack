@@ -8,6 +8,7 @@ import { ChatGateway } from './chat.gateway';
 import { CustomersModule } from './customers/customers.module';
 import { UsersModule } from './users/users.module';
 import { HotelsModule } from './hotels/hotels.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { HotelsModule } from './hotels/hotels.module';
     CustomersModule,
     UsersModule,
     HotelsModule,
+    AuthModule,
   ],
   providers: [ChatGateway],
 })
