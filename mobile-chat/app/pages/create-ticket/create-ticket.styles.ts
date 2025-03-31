@@ -1,4 +1,4 @@
-import { DefaultAppTheme } from "@/app/theme/fonts";
+import { DefaultAppTheme } from "@/app/theme/colors";
 import styled from "styled-components/native";
 
 export const ContainerView = styled.View`
