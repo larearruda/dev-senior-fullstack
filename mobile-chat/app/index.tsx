@@ -38,13 +38,13 @@ function InnerApp() {
     <Provider store={store}>
       <Stack.Navigator initialRouteName="SignIn">
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="SignIn"
+          component={SignIn}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="SignIn"
-          component={SignIn}
+          name="Home"
+          component={HomeScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
