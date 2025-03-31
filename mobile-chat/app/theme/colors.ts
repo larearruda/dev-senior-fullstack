@@ -24,7 +24,7 @@ const enum DEFAULT_THEME {
 
 export const DefaultAppTheme = {
   button_default: DEFAULT_THEME.white,
-  button_default_label: DEFAULT_THEME.dark_gray,
+  button_default_label: DEFAULT_THEME.blue,
   button_primary: DEFAULT_THEME.blue,
   button_primary_label: DEFAULT_THEME.white,
   button_warning: DEFAULT_THEME.yellow,

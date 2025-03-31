@@ -1,5 +1,9 @@
 import { rem } from "./helpers";
 
+/*
+ pedi pro chat gpt me ensinar sobre padroes de tipografia e o chat trouxe que existe uma escala com Minor Third, Major Third, Perfect Fourth, Golden Ratio e eu estou considerando a escala 1.25 Major Third e tirei os tamanhos desse site https://typescale.com/
+*/
+
 export const DefaultAppFonts = {
   body: {
     p: {

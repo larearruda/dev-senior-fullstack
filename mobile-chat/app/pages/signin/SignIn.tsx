@@ -62,7 +62,7 @@ const SignIn: React.FC<SignInProps> = ({ navigation }: SignInProps) => {
               onChange={() => setRememberMe(!rememberMe)}
               label="Lembrar de mim"
             />
-            <InputButton buttonLabel="Continuar com Google" color="primary" />
+            <InputButton buttonLabel="Acessar com Google" color="default" />
           </LoginBox>
         </Container>
       </SafeAreaBackground>
