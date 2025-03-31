@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { ColorOptions, DefaultAppTheme } from "../../theme/globals";
+import { ColorOptions, DefaultAppTheme } from "@/app/theme/colors";
 
 export interface CardAreaColorProps {
   color: ColorOptions;

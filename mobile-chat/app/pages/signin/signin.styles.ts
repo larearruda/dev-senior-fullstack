@@ -1,4 +1,4 @@
-import { DefaultAppFonts } from "@/app/theme/globals";
+import { DefaultAppFonts } from "@/app/theme/fonts";
 import styled from "styled-components/native";
 
 export const SafeAreaBackground = styled.SafeAreaView``;

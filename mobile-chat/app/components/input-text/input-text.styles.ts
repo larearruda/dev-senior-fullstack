@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { DefaultAppFonts, DefaultAppTheme } from "../../theme/globals";
+import { DefaultAppFonts, DefaultAppTheme } from "../../theme/fonts";
 
 export const TextView = styled.View``;
 

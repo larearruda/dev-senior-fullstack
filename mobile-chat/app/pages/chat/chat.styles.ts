@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { DefaultAppTheme } from "@/app/theme/globals";
+import { DefaultAppTheme } from "@/app/theme/fonts";
 
 export const ConversationBox = styled.View`
   flex: 2;

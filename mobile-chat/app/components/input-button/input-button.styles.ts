@@ -1,10 +1,7 @@
 import styled from "styled-components/native";
-import {
-  ColorOptions,
-  DefaultAppFonts,
-  DefaultAppTheme,
-  spacing,
-} from "../../theme/globals";
+import { DefaultAppFonts } from "../../theme/fonts";
+import { spacing } from "@/app/theme/helpers";
+import { ColorOptions, DefaultAppTheme } from "@/app/theme/colors";
 
 export interface InputButtonColorProps {
   color: ColorOptions;
