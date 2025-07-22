@@ -31,6 +31,16 @@ npm install -g expo-cli
 npx create-expo-app mobile-chat
 cd mobile-chat
 npx expo start
+
+# remover dependencias
+rm -rf .expo .expo-shared node_modules
+rm package-lock.json
+npm install
+npx expo start --clear
+
+# identificar e corrigir problemas em versoes de dependencias
+npx expo-doctor
+npx expo start --clear
 ```
 
 ### Configuração Github
@@ -45,8 +55,9 @@ fatal: Could not read from remote repository.
 Adicionar novamente a chave ssh para resolver
 
 ```shell
-ssh-add ~/.ssh/larissa.arruda94
+ssh-add ~/.ssh/larearruda
 git config user.email "larissa.arruda94@gmail.com"
+git config user.name "larearruda"
 
 ```
 
